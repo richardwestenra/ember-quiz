@@ -22,7 +22,6 @@ module.exports = function (grunt) {
     var yeomanConfig = {
         app: 'app',
         dist: 'dist',
-        // dest: '/mash-tun.net/rasmussen/quizmaker/'
         dest: '/test.richardwestenra.com/quizmaker/'
     };
 
