@@ -1,0 +1,55 @@
+
+		<div class="form-group">
+			<label for="title" class="col-sm-2 control-label">Title</label>
+			<div class="col-sm-10">
+				{{!-- {{#view Quizmaker.TextInputView}}
+				{{/view}} --}}
+				{{!-- <input type="text" class="form-control" id="title" name="title" placeholder="Title of the quiz" required> --}}
+				{{input value=title type="text" class="form-control" id="title" placeholder="Title of the quiz" required="required"}}
+			</div>
+		</div>
+		<div class="form-group">
+			<label for="excerpt" class="col-sm-2 control-label">Excerpt</label>
+			<div class="col-sm-10">
+				{{!-- <textarea class="form-control" id="excerpt" name="excerpt" placeholder="Short description of the quiz" required></textarea> --}}
+				{{textarea value=excerpt class="form-control" id="excerpt" placeholder="Short description of the quiz" rows="3" required="required"}}
+			</div>
+		</div>
+		<div class="form-group">
+			<label for="fullname" class="col-sm-2 control-label">Author</label>
+			<div class="col-sm-10">
+				{{!-- <input type="text" class="form-control" id="fullname" name="fullname" placeholder="Enter your Full Name like Alan Smithee" required> --}}
+				{{input value=fullname type="text" class="form-control" id="fullname" placeholder="Enter your full name, e.g. Alan Smithee" required="required"}}
+			</div>
+		</div>
+		<div class="form-group">
+			<label for="quiztype" class="col-sm-2 control-label">Quiz type</label>
+			<div class="col-sm-10">
+				{{view Ember.Select value=quiztype content=quiztypes id="quiztype" name="quiztype" class="form-control" prompt="Pick a type:"}}
+			</div>
+		</div>
+		<div class="form-group">
+			<label for="quiztype" class="col-sm-2 control-label">Questions ({{questionsCount}})</label>
+			<div class="col-sm-10">
+				{{!-- {{render "questions" quiz}} --}}
+				<p><button class="btn btn-info btn-sm" {{action 'createQuestion'}}><span class="glyphicon glyphicon-plus"></span> Add new question</button></p>
+				<table class="table table-striped">
+					{{#each questions}}
+						<tr>
+							<td>{{input value=question type="text" class="form-control" required="required" placeholder="Ask a question"}}</td>
+							<td>{{id}}</td>
+							<td><button class="btn btn-danger btn-xs pull-right" {{action 'removeQuestion' this}}>Delete Q</button></td>
+							<td><button class="btn btn-success btn-xs pull-right" {{action 'addAnswer' this}}>Add answer</button></td>
+							{{#each answers}}
+								</tr>
+								<tr>
+									<td>{{input value=question type="text" class="form-control" required="required" placeholder="Provide an answer"}}</td>
+									<td>{{id}}</td>
+									<td><button class="btn btn-danger btn-xs pull-right" {{action 'removeAnswer' this}}>Delete A</button></td>
+							{{/each}}
+						</tr>
+					{{/each}}
+				</table>
+
+			</div>
+		</div>

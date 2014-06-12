@@ -1,0 +1,31 @@
+{{!-- <h1>Quiz</h1>
+
+<table>
+	{{#each buffer}}
+	<tr>
+		<td>
+			<strong>{{key}}:</strong>
+		</td>
+		<td>
+			{{input value=value}}
+		</td>
+	</tr>
+	{{/each}}
+</table>
+
+<button {{action 'save'}}>Update</button>
+
+{{outlet}} --}}
+
+<h1>Edit quiz</h1>
+<form class="form-horizontal" role="form">
+	{{partial "editform"}}
+	<div class="form-group">
+		<div class="col-sm-offset-2 col-sm-10">
+			{{!-- {{link-to 'Save' 'quiz.index' class="btn btn-success"}} --}}
+			{{!-- {{link-to 'Cancel' 'quiz.index' class="btn btn-warning pull-right"}} --}}
+			<button type="submit" class="btn btn-success" {{action 'doneEditing'}}>Save</button>
+			<button class="btn btn-warning pull-right" {{action 'cancel'}}>Cancel</button>
+		</div>
+	</div>
+</form>

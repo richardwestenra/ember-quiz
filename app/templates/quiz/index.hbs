@@ -1,0 +1,15 @@
+<h1>{{title}}</h1>
+<h4>A <em style="text-transform: lowercase;">{{quiztype}}</em> quiz by {{fullname}} <small class="muted">{{format-date submittedOn}}</small></h4>
+<hr>
+<p class="lead">{{excerpt}}</p>
+<table class="table table-striped">
+	{{#each questions}}
+		<tr>
+			<td>{{question}}</td>
+			<td>{{id}}</td>
+		</tr>
+	{{/each}}
+</table>
+{{link-to 'Edit' 'quiz.edit' class="btn btn-default"}}
+{{!-- <button type="submit" class="btn btn-default" {{action 'edit'}}>Edit</button> --}}
+<button class="btn btn-danger pull-right" {{action 'remove'}}>Delete Quiz</button>
