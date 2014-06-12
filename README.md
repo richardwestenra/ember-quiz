@@ -12,3 +12,6 @@ It's intended to make quizzes like these:
 It's currently using HTML5 LocalStorage as a temporary data source, so all quiz data is stored in your local browser for now. The plan is to hook it up to a database with a JSON API to store the quizzes.
 
 We'll probably just use an htaccess password prompt for the CMS authorization, and then use PHP to generate individual quiz pages outside of Ember. Those will be intentionally very bare-bones, because they'll be embedded in iframes on the client's website.
+
+### Note: ###
+This git repo is initialised from an existing project with a private repo. We removed some stuff to make it easier to make it public.
