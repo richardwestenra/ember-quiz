@@ -7,7 +7,7 @@ Quizmaker.NewController = Ember.ObjectController.extend({
 	content: {},
 	quiztypes: ['Multiple choice', 'Checklist', 'Either/or'],
 	actions: {
-		save: function(model){
+		save: function(){
 
 			var store = this.get('store');
 			var model = this.get('model');

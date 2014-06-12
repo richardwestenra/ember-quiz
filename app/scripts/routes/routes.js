@@ -19,20 +19,18 @@ Quizmaker.NewRoute = Ember.Route.extend({
 	model: function() {
 		return this.get('store').createRecord('quiz');
 	},
-
 	actions: {
 		save: function() {
 			this.get('model').save().then(function() {
-				this.transitionTo('...')
+				this.transitionTo('...');
 			}.bind(this));
 		},
-
 		cancel: function() {
 			this.get('model').destroyRecord();
 			this.transitionTo('...');
 		}
 	}
-})
+});
 Quizmaker.QuizIndexRoute = Ember.Route.extend({
 	model: function() {
 		return this.modelFor('quiz');

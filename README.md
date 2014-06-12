@@ -1,6 +1,8 @@
 Ember Quizmaker
 ==========
 
+Demo: http://test.richardwestenra.com/quizmaker/
+
 This is a CMS for building Buzzfeed-style quizzes. It runs on Ember.js with Ember Data and uses the Yeoman Ember generator.
 It's intended to make quizzes like these:
 * Multiple choice-style: http://www.buzzfeed.com/justincarissimo/which-famous-emma-are-you

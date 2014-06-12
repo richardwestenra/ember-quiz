@@ -22,7 +22,8 @@ module.exports = function (grunt) {
     var yeomanConfig = {
         app: 'app',
         dist: 'dist',
-        dest: '/mash-tun.net/rasmussen/quizmaker/'
+        // dest: '/mash-tun.net/rasmussen/quizmaker/'
+        dest: '/test.richardwestenra.com/quizmaker/'
     };
 
     grunt.initConfig({
@@ -31,8 +32,8 @@ module.exports = function (grunt) {
         ftp_push: {
             your_target: {
                 options: {
-                    authKey: 'mashtun',
-                    host: 'forsyth.dreamhost.com',
+                    authKey: 'rw',
+                    host: 'ftp.richardwestenra.com',
                     // port: 21,
                     dest: '<%= yeoman.dest %>'
                 },
