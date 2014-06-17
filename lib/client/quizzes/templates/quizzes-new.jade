@@ -1,0 +1,19 @@
+.col-md-3
+
+.col-md-6
+
+  <form role='form' {{action 'signin' model on='submit'}}>
+
+  legend Create new quiz
+
+  .form-group.error
+    | {{error}}
+  .form-group
+    | {{input type='text' class='form-control' value=model.token required='required'}}
+  .form-group
+    button.btn.btn-default(type='submit') Enter
+  .form-group
+    | Don't have a Unique ID? Please get one by {{#link-to 'pay'}}Clicking Here{{/link-to}}.
+  </form>
+
+.col-md-3
