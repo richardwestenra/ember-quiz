@@ -1,5 +1,5 @@
 {
-  "name": "quizes",
+  "name": "quizzes",
   "dependencies": {
   },
   "scripts": [
@@ -11,8 +11,9 @@
     "controllers.js"
   ],
   "jade": [
-    "templates/quizes",
-    "templates/quizes-index"
+    "templates/quizzes",
+    "templates/quizzes-index",
+    "templates/quizzes-new"
   ],
   "styles": [
   ]

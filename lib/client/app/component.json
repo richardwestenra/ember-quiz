@@ -52,7 +52,7 @@
     "images/favicon.ico"
   ],
   "local": [
-    "quizes",
+    "quizzes",
     "quiz",
     "questions",
     "question",
@@ -64,5 +64,11 @@
   ],
   "files": [
     "vendor/nprogress.js"
+  ],
+  "fonts": [
+    "bootstrap/fonts/glyphicons-halflings-regular.svg",
+    "bootstrap/fonts/glyphicons-halflings-regular.ttf",
+    "bootstrap/fonts/glyphicons-halflings-regular.eot",
+    "bootstrap/fonts/glyphicons-halflings-regular.woff"
   ]
 }

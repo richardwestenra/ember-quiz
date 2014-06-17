@@ -15,12 +15,25 @@ nav#primary-navbar.navbar.navbar-default.navbar-fixed-top(
           span.icon-bar
           span.icon-bar
           span.icon-bar
-      <a href='javascript:' class='navbar-brand' {{action 'showLeftDrawer'}}>
+      | {{#link-to 'quizzes.index' class='navbar-brand' }}
       | {{config.title}}
-      </a>
+      | {{/link-to}}
 
     #primary-navbar-collapse.collapse.navbar-collapse
-      
+
+
+      ul.nav.navbar-nav
+
+        li
+          | {{#link-to 'quizzes'}}Quizzes{{/link-to}}
+
+        li
+          | {{#link-to 'quizzes.new'}}
+          span.glyphicon.glyphicon-plus
+          &nbsp;
+          | New Quiz
+          | {{/link-to}}
+
       ul.nav.navbar-nav.navbar-right
 
         li
