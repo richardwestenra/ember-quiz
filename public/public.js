@@ -262,7 +262,7 @@ require.register("quiz/views.js", Function("exports, require, module",
 "//@ sourceURL=quiz/views.js"
 ));
 require.register("quiz/models.js", Function("exports, require, module",
-"//@ sourceURL=quiz/models.js"
+"App.Quiz = DS.Model.extend({\n  title : DS.attr('string'),\n  excerpt : DS.attr('string'),\n  fullname : DS.attr('string'),\n  quiztype : DS.attr('string'),\n  submittedOn : DS.attr('date')\n});\n//@ sourceURL=quiz/models.js"
 ));
 require.register("quiz/routes.js", Function("exports, require, module",
 "/**\n  * Quiz route.\n  */\nApp.QuizRoute = Em.Route.extend({\n});\n\n\n/**\n  * Quiz index route.\n  */\nApp.QuizIndexRoute = Em.Route.extend({\n});\n//@ sourceURL=quiz/routes.js"

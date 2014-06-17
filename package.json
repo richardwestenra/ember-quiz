@@ -3,7 +3,6 @@
   "version": "1.0.0",
   "main": "lib/server/index.js",
   "dependencies": {
-    "mongoose": "3.6.18",
     "mongoose-time": "0.1.0",
     "superagent": "^0.16.0",
     "express": "~3.4.8",
