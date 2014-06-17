@@ -21,7 +21,7 @@ run-production:
 
 deploy:
 	@git push origin feature/backend | echo
-	@git push heroku feature/backend | echo
+	@git push heroku feature/backend:master | echo
 
 test:
 	@node bin/test $(testfiles)
