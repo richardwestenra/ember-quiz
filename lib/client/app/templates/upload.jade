@@ -1,10 +1,14 @@
-div
-
-  | {{view App.ImageView srcBinding='view.image' class='form-image'}}
+| {{#if view.record.image}}
 
 div
 
-  | {{#if view.image}}
+  | {{view App.ImageView srcBinding='view.record.image' class='form-image'}}
+
+| {{/if}}
+
+div
+
+  | {{#if view.record.image}}
 
   | {{#view view.upload.DropView}}
   | Change

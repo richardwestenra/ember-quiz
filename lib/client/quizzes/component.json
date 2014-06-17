@@ -1,6 +1,7 @@
 {
   "name": "quizzes",
   "dependencies": {
+    "visionmedia/batch": "0.5.0"
   },
   "scripts": [
     "index.js",
