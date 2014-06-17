@@ -7,7 +7,8 @@
     "kelonye/ember-link": "0.0.2",
     "kelonye/ember-autofill-fix": "0.0.4",
     "kelonye/ember-thumb": "0.0.2",
-    "kelonye/ember-page": "0.0.2"
+    "kelonye/ember-page": "0.0.2",
+    "kelonye/ember-upload": "0.0.3"
   },
   "development": {
     "timoxley/assert": "*",
@@ -43,7 +44,8 @@
   ],
   "jade": [
     "templates/application",
-    "templates/index"
+    "templates/index",
+    "templates/upload"
   ],
   "styles": [
     "vendor/nprogress.css"

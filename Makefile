@@ -1,17 +1,13 @@
 component=./node_modules/component-hooks/node_modules/.bin/component
 testfiles = $(shell find test -name test.* -type f)
-categories =\
-	landing-pages \
-	sales-pages \
-  squeeze-pages \
-  404-ages \
-  thank-you-pages
 
 run: node_modules
+	@mkdir -p tmp/images
 	@$(MAKE) components -B
 	@DEBUG=cms:* supervisor -q -w lib/server -e 'js' -x node bin/run
 
 run-production:
+	@mkdir -p tmp/images
 	@rm -rf public components
 	@$(MAKE) components
 	@DEBUG=cms:* MINIFY=1 node bin/build 

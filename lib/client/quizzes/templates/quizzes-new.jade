@@ -2,18 +2,34 @@
 
 .col-md-6
 
-  <form role='form' {{action 'signin' model on='submit'}}>
-
+  <form role='form' class='form-horizontal' {{action 'grant' model on='submit'}}>
   legend Create new quiz
-
   .form-group.error
-    | {{error}}
+    .col-sm-offset-2.col-sm-10
+      | {{error}}
   .form-group
-    | {{input type='text' class='form-control' value=model.token required='required'}}
+    .label.col-sm-2.control-label Title
+    .col-sm-10
+      | {{input type='text' class='form-control' value=model.title required='required' placeholder='Title of the quiz'}}
   .form-group
-    button.btn.btn-default(type='submit') Enter
+    .label.col-sm-2.control-label Image
+    .col-sm-10
+      | {{view App.UploadView modelBinding='model'}}
   .form-group
-    | Don't have a Unique ID? Please get one by {{#link-to 'pay'}}Clicking Here{{/link-to}}.
+    .label.col-sm-2.control-label Excerpt
+    .col-sm-10
+      | {{textarea class='form-control' value=model.excerpt required='required' placeholder="Short description of the quiz" rows="3"}}
+  .form-group
+    .label.col-sm-2.control-label Author
+    .col-sm-10
+      | {{input type='text' class='form-control' value=model.fullname required='required' placeholder="Enter your Full Name like Alan Smithee"}}
+  .form-group
+    .label.col-sm-2.control-label Quiz type
+    .col-sm-10
+      | {{view Ember.Select value=model.quiztype content=controller.controllers.quizzes.quiztypes class="form-control" prompt="Pick a type:"}}
+  .form-group
+    .col-sm-offset-2.col-sm-10
+      button.btn.btn-default(type='submit') Save
   </form>
 
 .col-md-3
