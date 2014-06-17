@@ -1,0 +1,12 @@
+table.table
+  thead
+    tr
+      td Name
+  tbody
+    | {{#each quiz in controller.controllers.quizzes}}
+    tr
+      td
+        | {{#link-to 'quiz.edit' quiz}}
+        | {{quiz.title}}
+        | {{/link-to}}
+    | {{/each}}

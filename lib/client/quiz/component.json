@@ -12,7 +12,8 @@
   ],
   "jade": [
     "templates/quiz",
-    "templates/quiz-index"
+    "templates/quiz-index",
+    "templates/quiz-edit"
   ],
   "styles": [
   ]

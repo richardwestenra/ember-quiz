@@ -3,7 +3,12 @@
 .col-md-6
 
   <form role='form' class='form-horizontal' {{action 'saveQuiz' model on='submit' target=controller.controllers.quizzes}}>
-  legend Create new quiz
+  legend
+    | {{#if model.id }}
+    | Edit quiz
+    | {{else}}
+    | Create new quiz
+    | {{/if}}
   .form-group.error
     .col-sm-offset-2.col-sm-10
       | {{model.error}}
