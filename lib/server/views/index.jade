@@ -1,0 +1,18 @@
+extends layout
+
+block scripts
+
+  script(
+    type='text/javascript'
+    src='/app/vendor/nprogress.js'
+  )
+  script.
+    NProgress.start();
+    NProgress.set(0.4);
+  script(
+    type='text/javascript'
+    src='/public.js'
+  )
+  script.
+    NProgress.done();
+    require('app');

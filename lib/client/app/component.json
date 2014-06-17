@@ -1,0 +1,62 @@
+{
+  "name": "app",
+  "dependencies": {
+    "kelonye/ember": "1.2.0",
+    "kelonye/ember-link": "0.0.2",
+    "kelonye/ember-autofill-fix": "0.0.4",
+    "kelonye/ember-thumb": "0.0.2",
+    "yields/store": "0.2.0",
+    "yields/slug": "1.1.0",
+    "component/cookie": "1.0.1",
+    "kelonye/ember-page": "0.0.2"
+  },
+  "development": {
+    "timoxley/assert": "*",
+    "kelonye/ember-mocha-adapter": "*"
+  },
+  "scripts": [
+
+    "index.js",
+    "views.js",
+    "models.js",
+    "routes.js",
+    "templates.js",
+    "controllers.js",
+
+    "bootstrap/js/tab.js",
+    "bootstrap/js/button.js",
+    "bootstrap/js/affix.js",
+    "bootstrap/js/dropdown.js",
+    "bootstrap/js/collapse.js",
+    "bootstrap/js/scrollspy.js",
+    "bootstrap/js/carousel.js",
+    "bootstrap/js/alert.js",
+    "bootstrap/js/transition.js",
+    "bootstrap/js/popover.js",
+    "bootstrap/js/modal.js",
+    "bootstrap/js/tooltip.js"
+
+  ],
+  "less": [
+    "styles/style"
+  ],
+  "jade": [
+    "templates/application",
+    "templates/index"
+  ],
+  "styles": [
+    "vendor/nprogress.css"
+  ],
+  "images": [
+    "images/favicon.ico"
+  ],
+  "local": [
+
+  ],
+  "paths": [
+
+  ],
+  "files": [
+    "vendor/nprogress.js"
+  ]
+}

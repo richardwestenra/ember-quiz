@@ -1,9 +1,0 @@
-
-<h1>Quizzes</h1>
-<table class="table table-striped">
-	{{#each model}}
-		<tr><td>{{#link-to 'quiz' this}}{{this.title}}{{/link-to}}</td></tr>
-	{{/each}}
-</table>
-
-{{outlet}}
