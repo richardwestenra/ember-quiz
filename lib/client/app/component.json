@@ -59,7 +59,9 @@
     "questions",
     "question",
     "answers",
-    "answer"
+    "answer",
+    "results",
+    "result"
   ],
   "paths": [
     ".",

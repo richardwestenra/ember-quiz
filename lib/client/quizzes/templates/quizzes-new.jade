@@ -1,69 +1,15 @@
-.col-md-3
 
-.col-md-6
+<form role='form' class='form-horizontal' {{action 'saveQuiz' model on='submit' target=controller.controllers.quizzes}}>
+legend
+  | {{#if model.id }}
+  | Edit quiz
+  | {{else}}
+  | Create new quiz
+  | {{/if}}
 
-  <form role='form' class='form-horizontal' {{action 'saveQuiz' model on='submit' target=controller.controllers.quizzes}}>
-  legend
-    | {{#if model.id }}
-    | Edit quiz
-    | {{else}}
-    | Create new quiz
-    | {{/if}}
-  .form-group.error
-    .col-sm-offset-2.col-sm-10
-      | {{model.error}}
-  .form-group
-    .label.col-sm-2.control-label Title
-    .col-sm-10
-      | {{input type='text' class='form-control' value=model.title required='required' placeholder='Title of the quiz'}}
-  .form-group
-    .label.col-sm-2.control-label Image
-    .col-sm-10
-      | {{view App.UploadView recordBinding='model'}}
-  .form-group
-    .label.col-sm-2.control-label Excerpt
-    .col-sm-10
-      | {{textarea class='form-control' value=model.excerpt required='required' placeholder="Short description of the quiz" rows="3"}}
-  .form-group
-    .label.col-sm-2.control-label Author
-    .col-sm-10
-      | {{input type='text' class='form-control' value=model.fullName required='required' placeholder="Enter your Full Name like Alan Smithee"}}
-  .form-group
-    .label.col-sm-2.control-label Quiz type
-    .col-sm-10
-      | {{view Ember.Select value=model.quizType content=controller.controllers.quizzes.quizTypes class="form-control" prompt="Pick a type:" optionLabelPath='content.label' optionValuePath='content.value'}}
-  .form-group
-    .col-sm-offset-2.col-sm-10
-      <button {{action 'addQuestion' model target=controller.controllers.quizzes}} type='button' class='btn btn-info'>
-      | Add Question
-      </button>
+include _quiz
 
-  | {{#each question in model.questions}}
-
-  .form-group.error
-      .col-sm-offset-2.col-sm-10
-        | {{question.error}}
-    .form-group
-      .label.col-sm-2.control-label Title
-      .col-sm-10
-        | {{input type='text' class='form-control' value=question.title required='required' placeholder='Title of the question'}}
-    .form-group
-      .label.col-sm-2.control-label Image
-      .col-sm-10
-        | {{view App.UploadView recordBinding='question'}}
-  .form-group
-    .col-sm-offset-8.col-sm-4
-      <button {{action 'removeQuestion' model question target=controller.controllers.quizzes}} type='button' class='btn btn-danger'>
-      | Remove Question
-      </button>
-  
-  | {{/each}}
-
-  hr
-
-  .form-group
-    .col-sm-offset-2.col-sm-10
-      button.btn.btn-default(type='submit') Save
-  </form>
-
-.col-md-3
+.form-group
+  .col-sm-offset-10.col-sm-2
+    button.btn.btn-default(type='submit') Save
+</form>

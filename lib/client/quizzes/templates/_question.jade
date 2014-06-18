@@ -1,0 +1,37 @@
+.form-group.error
+  .col-sm-offset-2.col-sm-10
+    | {{question.error}}
+.form-group
+  .label.col-sm-2.control-label Title
+  .col-sm-10
+    | {{input type='text' class='form-control' value=question.title required='required' placeholder='Title of the question'}}
+.form-group
+  .label.col-sm-2.control-label Image
+  .col-sm-10
+    | {{view App.UploadView recordBinding='question'}}
+
+.form-group
+  .col-sm-offset-9.col-sm-3.text-right
+    <button {{action 'removeQuestion' model question target=controller.controllers.quizzes}} type='button' class='btn btn-danger'>
+    | Remove Question
+    </button>
+
+.row
+
+  .col-sm-2
+
+  .col-sm-10
+
+    | {{#each answer in question.answers}}
+
+    include _answer
+
+    | {{/each}}
+
+  .clearfix
+
+.form-group
+  .col-sm-offset-2.col-sm-10
+    <button {{action 'addAnswer' question target=controller.controllers.quizzes}} type='button' class='btn btn-info'>
+    | Add Answer
+    </button>

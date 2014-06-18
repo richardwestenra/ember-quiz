@@ -1,0 +1,16 @@
+.form-group.error
+  .col-sm-offset-2.col-sm-10
+    | {{answer.error}}
+.form-group
+  .label.col-sm-2.control-label Title
+  .col-sm-10
+    | {{input type='text' class='form-control' value=answer.title required='required' placeholder='Title of the answer'}}
+.form-group
+  .label.col-sm-2.control-label Image
+  .col-sm-10
+    | {{view App.UploadView recordBinding='answer'}}
+.form-group
+  .col-sm-offset-2.col-sm-10.text-right
+    <button {{action 'removeAnswer' question answer target=controller.controllers.quizzes}} type='button' class='btn btn-danger'>
+    | Remove Answer
+    </button>
