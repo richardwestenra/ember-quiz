@@ -62,7 +62,8 @@
     "answer"
   ],
   "paths": [
-
+    ".",
+    ".."
   ],
   "files": [
     "vendor/nprogress.js"

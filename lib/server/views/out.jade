@@ -1,0 +1,21 @@
+extends layout
+
+block head
+
+  link(
+    href='/out.css'
+    rel='stylesheet'
+    media='screen'
+  )
+
+block scripts
+
+  #container
+
+  script.
+    window.QUIZ = '#{quiz}';
+
+  script(
+    type='text/javascript'
+    src='/out.js'
+  )

@@ -1,0 +1,17 @@
+{
+  "name": "out",
+  "dependencies": {
+    "visionmedia/superagent": "0.16.0"
+  },
+  "scripts": [
+    "index.js"
+  ],
+  "jade": [
+    "templates/quiz"
+  ],
+  "styl": [
+    "styles/quiz"
+  ],
+  "styles": [
+  ]
+}

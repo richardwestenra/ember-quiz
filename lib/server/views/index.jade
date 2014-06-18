@@ -1,5 +1,13 @@
 extends layout
 
+block head
+
+  link(
+    href='/app.css'
+    rel='stylesheet'
+    media='screen'
+  )
+
 block scripts
 
   script(
@@ -11,8 +19,5 @@ block scripts
     NProgress.set(0.4);
   script(
     type='text/javascript'
-    src='/public.js'
+    src='/app.js'
   )
-  script.
-    NProgress.done();
-    require('app');

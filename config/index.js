@@ -14,7 +14,11 @@ var config = {
   },
   title: 'Quiz Maker',
   mongo: process.env.MONGOLAB_URI || 'mongodb://localhost/quiz-maker',
-  site: 'http:\/\/localhost:5000'
+  site: 'http:\/\/localhost:5000',
+  components: [
+    'app',
+    'out'
+  ]
 };
 
 if (process.env.NODE_ENV == 'production'){

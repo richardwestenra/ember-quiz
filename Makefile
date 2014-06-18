@@ -1,15 +1,16 @@
-component=./node_modules/component-hooks/node_modules/.bin/component
 testfiles = $(shell find test -name test.* -type f)
 
 run: node_modules
 	@mkdir -p tmp/images
-	@$(MAKE) components -B
+	@$(MAKE) --no-print-directory -C lib/client/app -B
+	@$(MAKE) --no-print-directory -C lib/client/out -B
 	@DEBUG=cms:* supervisor -q -w lib/server -e 'js' -x node bin/run
 
 run-production:
 	@mkdir -p tmp/images
-	@rm -rf public components
-	@$(MAKE) components
+	@rm -rf public
+	@$(MAKE) clean components --no-print-directory -C lib/client/app -B
+	@$(MAKE) clean components --no-print-directory -C lib/client/out -B
 	@DEBUG=cms:* MINIFY=1 node bin/build 
 	@du -bh public/*.js
 	@du -bh public/*.css
@@ -25,8 +26,5 @@ test:
 
 node_modules:
 	@npm install
-
-components:
-	@$(component) install --dev
 
 .PHONY: test deploy run
