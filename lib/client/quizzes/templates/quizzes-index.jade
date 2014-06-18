@@ -4,7 +4,7 @@ table.table.quizzes
       td Name
       td
   tbody
-    | {{#each quiz in model}}
+    | {{#each quiz in controller.controllers.quizzes}}
     tr
       td
         | {{#link-to 'quiz.edit' quiz}}
