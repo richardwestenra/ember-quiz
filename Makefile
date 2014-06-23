@@ -9,8 +9,8 @@ run: node_modules
 run-production:
 	@mkdir -p tmp/images
 	@rm -rf public
-	@$(MAKE) clean components --no-print-directory -C lib/client/app -B
-	@$(MAKE) clean components --no-print-directory -C lib/client/out -B
+	@$(MAKE) components --no-print-directory -C lib/client/app -B
+	@$(MAKE) components --no-print-directory -C lib/client/out -B
 	@DEBUG=cms:* MINIFY=1 node bin/build 
 	@du -bh public/*.js
 	@du -bh public/*.css

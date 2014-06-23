@@ -24,19 +24,10 @@
     "controllers.js",
     "router.js",
     "store.js",
-    
-    "bootstrap/js/tab.js",
+
     "bootstrap/js/button.js",
-    "bootstrap/js/affix.js",
-    "bootstrap/js/dropdown.js",
-    "bootstrap/js/collapse.js",
-    "bootstrap/js/scrollspy.js",
-    "bootstrap/js/carousel.js",
     "bootstrap/js/alert.js",
-    "bootstrap/js/transition.js",
-    "bootstrap/js/popover.js",
-    "bootstrap/js/modal.js",
-    "bootstrap/js/tooltip.js"
+    "bootstrap/js/transition.js"
 
   ],
   "less": [
@@ -75,5 +66,21 @@
     "bootstrap/fonts/glyphicons-halflings-regular.ttf",
     "bootstrap/fonts/glyphicons-halflings-regular.eot",
     "bootstrap/fonts/glyphicons-halflings-regular.woff"
+  ],
+  "dump": [
+
+    "bootstrap/js/tab.js",
+    "bootstrap/js/button.js",
+    "bootstrap/js/affix.js",
+    "bootstrap/js/dropdown.js",
+    "bootstrap/js/collapse.js",
+    "bootstrap/js/scrollspy.js",
+    "bootstrap/js/carousel.js",
+    "bootstrap/js/alert.js",
+    "bootstrap/js/transition.js",
+    "bootstrap/js/popover.js",
+    "bootstrap/js/modal.js",
+    "bootstrap/js/tooltip.js"
+
   ]
 }
