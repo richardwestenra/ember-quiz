@@ -1,9 +1,0 @@
-{
-  "name": "base",
-  "local": [
-    "app"
-  ],
-  "paths": [
-    "lib/client"
-  ]
-}

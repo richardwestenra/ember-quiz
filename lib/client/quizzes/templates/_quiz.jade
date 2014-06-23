@@ -20,7 +20,7 @@
 .form-group
   .label.col-sm-2.control-label Quiz type
   .col-sm-10
-    | {{view Ember.Select valueBinding='model.quizType' content=controller.controllers.quizzes.quizTypes class='form-control' prompt='Pick a type:' optionLabelPath='content.label' optionValuePath='content.value'}}
+    | {{view Em.Select valueBinding='model.quizType' content=controller.controllers.quizzes.quizTypes class='form-control' optionLabelPath='content.label' optionValuePath='content.value' prompt='Select quiz type:'}}
 
 .row
 
