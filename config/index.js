@@ -23,10 +23,6 @@ var config = {
   bucket: 'quiz-maker'
 };
 
-AWS.config.accessKeyId = process.env.AWS_ACCESS_KEY_ID;
-AWS.config.secretAccessKey = process.env.AWS_ACCESS_KEY_ID;
-AWS.config.region = process.env.AWS_S3_REGION || 'us-west-2';
-
 if (process.env.NODE_ENV == 'production'){
   config.site = 'http:\/\/boiling-harbor-8354\.herokuapp\.com';
 }
