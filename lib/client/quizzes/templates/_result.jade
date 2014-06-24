@@ -10,15 +10,11 @@
   .col-sm-10
     | {{textarea type='text' class='form-control' value=result.content required='required' placeholder='Closing paragraph'}}
 .form-group
-  .label.col-sm-2.control-label Range
-  .col-sm-10
-    | {{view Em.Select contentBinding='question.anwsersRange' valueBinding='result.range' prompt='Select range:'}}
-.form-group
   .label.col-sm-2.control-label Image
   .col-sm-10
     | {{view App.UploadView recordBinding='result'}}
 .form-group
   .col-sm-offset-2.col-sm-10.text-right
-    <button {{action 'removeResult' question result target=controller.controllers.quizzes}} type='button' class='btn btn-danger'>
+    <button {{action 'removeResult' model result target=controller.controllers.quizzes}} type='button' class='btn btn-danger'>
     | Remove Result
     </button>

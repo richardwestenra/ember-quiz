@@ -28,6 +28,26 @@
 
   .col-sm-10
 
+    | {{#each result in model.results}}
+
+    include _result
+
+    | {{/each}}
+
+  .clearfix
+
+.form-group
+  .col-sm-offset-2.col-sm-10
+    <button {{action 'addResult' model target=controller.controllers.quizzes}} type='button' class='btn btn-info'>
+    | Add Result
+    </button>
+
+.row
+
+  .col-sm-2
+
+  .col-sm-10
+
     | {{#each question in model.questions}}
 
     include _question
