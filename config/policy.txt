@@ -1,7 +1,7 @@
 {
   'expiration': '2020-01-01T00:00:00Z',
   'conditions': [ 
-    {'bucket': 'quizmaker'}, 
+    {'bucket': 'quiz-maker-2'}, 
     {'acl': 'public-read'},
     ['starts-with', '$Content-Type', ''],
     ['starts-with', '$Content-Length', ''],

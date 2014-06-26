@@ -5,6 +5,18 @@
   .label.col-sm-2.control-label Title
   .col-sm-10
     | {{input type='text' class='form-control' value=answer.title placeholder='Title of the answer'}}
+| {{#if model.isTypeOne}}
+.form-group
+  .label.col-sm-2.control-label Result
+  .col-sm-10
+    | {{view Em.Select class='form-control' valueBinding='answer.result' contentBinding='model.results' optionLabelPath='content.title' optionValuePath='content' prompt='Select result:'}}
+| {{/if}}
+| {{#if model.isTypeThree}}
+.form-group
+  .label.col-sm-2.control-label Value
+  .col-sm-10
+    | {{view Em.Select class='form-control' valueBinding='answer.value' contentBinding='controller.controllers.quizzes.booleans' prompt='Select value:'}}
+| {{/if}}
 .form-group
   .label.col-sm-2.control-label Image
   .col-sm-10

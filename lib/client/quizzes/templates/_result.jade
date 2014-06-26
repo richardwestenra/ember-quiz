@@ -9,6 +9,16 @@
   .label.col-sm-2.control-label Content
   .col-sm-10
     | {{textarea type='text' class='form-control' value=result.content required='required' placeholder='Closing paragraph'}}
+| {{#if model.isTypeTwo}}
+.form-group
+  .label.col-sm-2.control-label Min
+  .col-sm-10
+    | {{input type='text' class='form-control' value=result.min required='required' placeholder='Range min'}}
+.form-group
+  .label.col-sm-2.control-label Max
+  .col-sm-10
+    | {{input type='text' class='form-control' value=result.max required='required' placeholder='Range max'}}
+| {{/if}}
 .form-group
   .label.col-sm-2.control-label Image
   .col-sm-10
