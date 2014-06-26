@@ -2,7 +2,6 @@
   * Module dependencies.
   */
 var fs = require('fs');
-var AWS = require('aws-sdk');
 
 // config
 
