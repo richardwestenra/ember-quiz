@@ -8,7 +8,8 @@
     "kelonye/ember-autofill-fix": "0.0.4",
     "kelonye/ember-thumb": "0.0.2",
     "kelonye/ember-page": "0.0.2",
-    "kelonye/ember-upload": "0.0.3"
+    "kelonye/ember-upload": "0.0.5",
+    "yields/slug": "1.1.0"
   },
   "development": {
     "timoxley/assert": "*",

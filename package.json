@@ -14,8 +14,7 @@
     "slug-component": "^1.1.0",
     "passport-http": "^0.2.2",
     "connect-mongo": "^0.4.1",
-    "ember-mongoose": "^0.1.2",
-    "aws-sdk": "^2.0.1"
+    "ember-mongoose": "^0.1.2"
   },
   "devDependencies": {
     "mocha": "~1.13.0",
