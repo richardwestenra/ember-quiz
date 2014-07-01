@@ -17,8 +17,8 @@ run-production:
 	@DEBUG=cms:* NODE_ENV=production node bin/run
 
 deploy:
-	@git push origin feature/backend | echo
-	@git push heroku feature/backend:master | echo
+	@git push origin master | echo
+	@git push heroku master | echo
 
 test:
 	@node bin/test $(testfiles)
