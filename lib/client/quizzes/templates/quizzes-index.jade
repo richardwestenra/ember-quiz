@@ -3,6 +3,7 @@ table.table.quizzes
     tr
       td Name
       td
+      td
   tbody
     | {{#each quiz in controller.controllers.quizzes}}
     tr
@@ -10,6 +11,10 @@ table.table.quizzes
         | {{#link-to 'quiz.edit' quiz}}
         | {{quiz.title}}
         | {{/link-to}}
+      td
+        | {{#view App.PreviewLinkView quizBinding='quiz' class='btn btn-info'}}
+        | preview
+        | {{/view}}
       td
         <button class='btn btn-danger' {{action 'removeQuiz' quiz target='controller.controllers.quizzes'}}>
         | remove
