@@ -1,7 +1,5 @@
-node_modules
-temp
-dist
-.sass-cache
-.tmp
-app/bower_components
-.ftpauth
+*npm-debug.log
+*components
+*node_modules
+tmp
+public

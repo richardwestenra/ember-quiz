@@ -1,0 +1,58 @@
+@import "lib/client/app/styles/bootstrap";
+@import "lib/client/app/styles/mixins";
+@import "lib/client/app/styles/variables";
+
+body {
+  padding-top: 70px;
+  padding-bottom: 100px;
+}
+
+.error{
+  color: red;
+}
+
+.quizzes td:nth-of-type(1){
+  width: 80%;
+}
+
+// progress
+
+#nprogress .bar{
+  z-index: 1000000;
+}
+
+// drop
+
+.drop{
+  padding: 10px 0;
+  border: 3px dashed #ddd;
+  border-radius: @border-radius;
+  text-align: center;
+  // width: 100%;
+}
+.drop.over{
+  border: 3px dotted #ddd;
+}
+
+.form-image{
+  max-width: 100%;
+  border: 2px solid #ddd;
+  margin-bottom: 10px;
+  border-radius: @border-radius;
+}
+
+.out{
+
+  p{
+    padding: 10px;
+  }
+
+  .question-image{
+    // width: 100%;
+  }
+
+}
+
+.result{
+  display: none;
+}

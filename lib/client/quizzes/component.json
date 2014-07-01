@@ -1,0 +1,21 @@
+{
+  "name": "quizzes",
+  "dependencies": {
+    "visionmedia/batch": "0.5.0"
+  },
+  "scripts": [
+    "index.js",
+    "views.js",
+    "models.js",
+    "routes.js",
+    "templates.js",
+    "controllers.js"
+  ],
+  "jade": [
+    "templates/quizzes",
+    "templates/quizzes-index",
+    "templates/quizzes-new"
+  ],
+  "styles": [
+  ]
+}

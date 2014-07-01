@@ -1,0 +1,87 @@
+{
+  "name": "app",
+  "dependencies": {
+    "kelonye/ember": "1.2.0",
+    "kelonye/ember-data": "1.0.0-beta.4",
+    "kelonye/ember-mongoose": "0.1.3",
+    "kelonye/ember-link": "0.0.2",
+    "kelonye/ember-autofill-fix": "0.0.4",
+    "kelonye/ember-thumb": "0.0.2",
+    "kelonye/ember-page": "0.0.2",
+    "kelonye/ember-upload": "0.0.5",
+    "yields/slug": "1.1.0"
+  },
+  "development": {
+    "timoxley/assert": "*",
+    "kelonye/ember-mocha-adapter": "*"
+  },
+  "scripts": [
+
+    "index.js",
+    "views.js",
+    "models.js",
+    "routes.js",
+    "templates.js",
+    "controllers.js",
+    "router.js",
+    "store.js",
+
+    "bootstrap/js/button.js",
+    "bootstrap/js/alert.js",
+    "bootstrap/js/transition.js"
+
+  ],
+  "less": [
+    "styles/style"
+  ],
+  "jade": [
+    "templates/application",
+    "templates/index",
+    "templates/upload"
+  ],
+  "styles": [
+    "vendor/nprogress.css"
+  ],
+  "images": [
+    "images/favicon.ico"
+  ],
+  "local": [
+    "quizzes",
+    "quiz",
+    "questions",
+    "question",
+    "answers",
+    "answer",
+    "results",
+    "result"
+  ],
+  "paths": [
+    ".",
+    ".."
+  ],
+  "files": [
+    "vendor/nprogress.js"
+  ],
+  "fonts": [
+    "bootstrap/fonts/glyphicons-halflings-regular.svg",
+    "bootstrap/fonts/glyphicons-halflings-regular.ttf",
+    "bootstrap/fonts/glyphicons-halflings-regular.eot",
+    "bootstrap/fonts/glyphicons-halflings-regular.woff"
+  ],
+  "dump": [
+
+    "bootstrap/js/tab.js",
+    "bootstrap/js/button.js",
+    "bootstrap/js/affix.js",
+    "bootstrap/js/dropdown.js",
+    "bootstrap/js/collapse.js",
+    "bootstrap/js/scrollspy.js",
+    "bootstrap/js/carousel.js",
+    "bootstrap/js/alert.js",
+    "bootstrap/js/transition.js",
+    "bootstrap/js/popover.js",
+    "bootstrap/js/modal.js",
+    "bootstrap/js/tooltip.js"
+
+  ]
+}

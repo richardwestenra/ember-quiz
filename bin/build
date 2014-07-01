@@ -1,0 +1,16 @@
+#!/usr/bin/env node
+/**
+  * Module dependencies.
+  */
+var debugs = require('../lib/server/debugs');
+var builder = require('../lib/server/builder');
+
+// exec
+
+builder(done);
+
+// done
+
+function done(err){
+  if (err) throw err;
+}

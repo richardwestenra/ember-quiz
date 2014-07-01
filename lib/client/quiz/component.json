@@ -1,0 +1,20 @@
+{
+  "name": "quiz",
+  "dependencies": {
+  },
+  "scripts": [
+    "index.js",
+    "views.js",
+    "models.js",
+    "routes.js",
+    "templates.js",
+    "controllers.js"
+  ],
+  "jade": [
+    "templates/quiz",
+    "templates/quiz-index",
+    "templates/quiz-edit"
+  ],
+  "styles": [
+  ]
+}

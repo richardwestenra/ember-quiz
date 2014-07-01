@@ -1,0 +1,10 @@
+{
+  "name": "out",
+  "dependencies": {
+  },
+  "scripts": [
+    "index.js"
+  ],
+  "styles": [
+  ]
+}

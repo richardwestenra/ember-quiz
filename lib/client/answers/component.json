@@ -1,0 +1,19 @@
+{
+  "name": "answers",
+  "dependencies": {
+  },
+  "scripts": [
+    "index.js",
+    "views.js",
+    "models.js",
+    "routes.js",
+    "templates.js",
+    "controllers.js"
+  ],
+  "jade": [
+    "templates/answers",
+    "templates/answers-index"
+  ],
+  "styles": [
+  ]
+}
