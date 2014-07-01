@@ -9,7 +9,8 @@
   .label.col-sm-2.control-label Content
   .col-sm-10
     | {{textarea type='text' class='form-control' value=result.content required='required' placeholder='Closing paragraph'}}
-| {{#if model.isTypeTwo}}
+| {{#if model.isTypeOne}}
+| {{else}}
 .form-group
   .label.col-sm-2.control-label Min
   .col-sm-10
