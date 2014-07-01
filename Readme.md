@@ -19,3 +19,11 @@ We'll probably just use an htaccess password prompt for the CMS authorization, a
 
 ### Note: ###
 This git repo is initialised from an existing project with a private repo. We removed some stuff to make it easier to make it public.
+
+Configuration
+---
+
+export QUIZMAKER_USER='user'
+export QUIZMAKER_PASS='pass'
+export QUIZMAKER_AWS_ACCESS_KEY_ID=""
+export QUIZMAKER_AWS_ACCESS_SECRET=""

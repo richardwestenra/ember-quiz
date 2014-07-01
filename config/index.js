@@ -9,8 +9,8 @@ var config = {
   port: 5000,
   secret: 'sdertrtythfbgdbvxczf5tghrgdfetghyrfg44trgfer+d/grfver',
   admin: {
-    username: 'admin',
-    password: 'cmS45.=14.Daf9'
+    username: process.env.QUIZMAKER_USER,
+    password: process.env.QUIZMAKER_PASS
   },
   title: 'Quiz Maker',
   mongo: process.env.MONGOLAB_URI || 'mongodb://localhost/quiz-maker',
