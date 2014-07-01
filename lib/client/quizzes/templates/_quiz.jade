@@ -56,8 +56,11 @@
 
   .clearfix
 
+| {{#if model.isTypeTwo}}
+| {{else}}
 .form-group
   .col-sm-offset-2.col-sm-10
     <button {{action 'addQuestion' model target=controller.controllers.quizzes}} type='button' class='btn btn-info'>
     | Add Question
     </button>
+| {{/if}}

@@ -1,3 +1,6 @@
+| {{#if model.isTypeTwo}}
+| {{else}}
+
 .form-group.error
   .col-sm-offset-2.col-sm-10
     | {{question.error}}
@@ -15,6 +18,8 @@
     <button {{action 'removeQuestion' model question target=controller.controllers.quizzes}} type='button' class='btn btn-danger'>
     | Remove Question
     </button>
+
+| {{/if}}
 
 .row
 

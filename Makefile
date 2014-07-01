@@ -1,13 +1,11 @@
 testfiles = $(shell find test -name test.* -type f)
 
 run: node_modules
-	@mkdir -p tmp/images
 	@$(MAKE) --no-print-directory -C lib/client/app -B
 	@$(MAKE) --no-print-directory -C lib/client/out -B
 	@DEBUG=cms:* supervisor -q -w lib/server -e 'js' -x node bin/run
 
 run-production:
-	@mkdir -p tmp/images
 	@rm -rf public
 	@$(MAKE) components --no-print-directory -C lib/client/app -B
 	@$(MAKE) components --no-print-directory -C lib/client/out -B
