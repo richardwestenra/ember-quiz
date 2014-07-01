@@ -1,0 +1,19 @@
+{
+  "name": "result",
+  "dependencies": {
+  },
+  "scripts": [
+    "index.js",
+    "views.js",
+    "models.js",
+    "routes.js",
+    "templates.js",
+    "controllers.js"
+  ],
+  "jade": [
+    "templates/result",
+    "templates/result-index"
+  ],
+  "styles": [
+  ]
+}

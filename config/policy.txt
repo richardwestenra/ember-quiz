@@ -1,0 +1,11 @@
+{
+  'expiration': '2020-01-01T00:00:00Z',
+  'conditions': [ 
+    {'bucket': 'quiz-maker-2'}, 
+    {'acl': 'public-read'},
+    ['starts-with', '$Content-Type', ''],
+    ['starts-with', '$Content-Length', ''],
+    ['starts-with', '$key', ''],
+    ['content-length-range', 0, 1048576]
+  ]
+}

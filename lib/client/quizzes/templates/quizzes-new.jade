@@ -1,0 +1,15 @@
+
+<form role='form' class='form-horizontal' {{action 'saveQuiz' model on='submit' target=controller.controllers.quizzes}}>
+legend
+  | {{#if model.id }}
+  | Edit quiz
+  | {{else}}
+  | Create new quiz
+  | {{/if}}
+
+include _quiz
+
+.form-group
+  .col-sm-offset-10.col-sm-2
+    button.btn.btn-default(type='submit') Save
+</form>

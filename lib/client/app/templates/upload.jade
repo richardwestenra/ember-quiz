@@ -1,0 +1,27 @@
+| {{#if view.record.image}}
+
+div
+
+  | {{view App.ImageView srcBinding='view.record.image' class='form-image'}}
+
+| {{/if}}
+
+div
+
+  | {{#if view.record.image}}
+
+  | {{#view view.upload.DropView}}
+  | Change
+  | {{/view}}
+
+  | {{else}}
+
+  | {{#view view.upload.DropView}}
+  | upload or drop a file here
+  | {{/view}}
+
+  | {{/if}}
+
+div
+
+  | {{view view.upload.ProgressView}}

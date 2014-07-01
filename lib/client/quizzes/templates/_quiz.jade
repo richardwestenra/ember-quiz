@@ -1,0 +1,63 @@
+.form-group.error
+  .col-sm-offset-2.col-sm-10
+    | {{model.error}}
+.form-group
+  .label.col-sm-2.control-label Title
+  .col-sm-10
+    | {{input type='text' class='form-control' value=model.title required='required' placeholder='Title of the quiz'}}
+.form-group
+  .label.col-sm-2.control-label Image
+  .col-sm-10
+    | {{view App.UploadView recordBinding='model'}}
+.form-group
+  .label.col-sm-2.control-label Excerpt
+  .col-sm-10
+    | {{textarea class='form-control' value=model.excerpt required='required' placeholder='Short description of the quiz' rows='3'}}
+.form-group
+  .label.col-sm-2.control-label Author
+  .col-sm-10
+    | {{input type='text' class='form-control' value=model.fullName required='required' placeholder='Enter your Full Name like Alan Smithee'}}
+.form-group
+  .label.col-sm-2.control-label Quiz type
+  .col-sm-10
+    | {{view Em.Select  class='form-control' valueBinding='model.quizType' contentBinding='controller.controllers.quizzes.quizTypes' optionLabelPath='content.label' optionValuePath='content.value'}}
+
+.row
+
+  .col-sm-2
+
+  .col-sm-10
+
+    | {{#each result in model.results}}
+
+    include _result
+
+    | {{/each}}
+
+  .clearfix
+
+.form-group
+  .col-sm-offset-2.col-sm-10
+    <button {{action 'addResult' model target=controller.controllers.quizzes}} type='button' class='btn btn-info'>
+    | Add Result
+    </button>
+
+.row
+
+  .col-sm-2
+
+  .col-sm-10
+
+    | {{#each question in model.questions}}
+
+    include _question
+
+    | {{/each}}
+
+  .clearfix
+
+.form-group
+  .col-sm-offset-2.col-sm-10
+    <button {{action 'addQuestion' model target=controller.controllers.quizzes}} type='button' class='btn btn-info'>
+    | Add Question
+    </button>

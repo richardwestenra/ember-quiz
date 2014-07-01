@@ -1,0 +1,30 @@
+.form-group.error
+  .col-sm-offset-2.col-sm-10
+    | {{result.error}}
+.form-group
+  .label.col-sm-2.control-label Title
+  .col-sm-10
+    | {{input type='text' class='form-control' value=result.title required='required' placeholder='Title of the result'}}
+.form-group
+  .label.col-sm-2.control-label Content
+  .col-sm-10
+    | {{textarea type='text' class='form-control' value=result.content required='required' placeholder='Closing paragraph'}}
+| {{#if model.isTypeTwo}}
+.form-group
+  .label.col-sm-2.control-label Min
+  .col-sm-10
+    | {{input type='text' class='form-control' value=result.min required='required' placeholder='Range min'}}
+.form-group
+  .label.col-sm-2.control-label Max
+  .col-sm-10
+    | {{input type='text' class='form-control' value=result.max required='required' placeholder='Range max'}}
+| {{/if}}
+.form-group
+  .label.col-sm-2.control-label Image
+  .col-sm-10
+    | {{view App.UploadView recordBinding='result'}}
+.form-group
+  .col-sm-offset-2.col-sm-10.text-right
+    <button {{action 'removeResult' model result target=controller.controllers.quizzes}} type='button' class='btn btn-danger'>
+    | Remove Result
+    </button>

@@ -1,0 +1,17 @@
+table.table.quizzes
+  thead
+    tr
+      td Name
+      td
+  tbody
+    | {{#each quiz in controller.controllers.quizzes}}
+    tr
+      td
+        | {{#link-to 'quiz.edit' quiz}}
+        | {{quiz.title}}
+        | {{/link-to}}
+      td
+        <button class='btn btn-danger' {{action 'removeQuiz' quiz target='controller.controllers.quizzes'}}>
+        | remove
+        </button>
+    | {{/each}}
