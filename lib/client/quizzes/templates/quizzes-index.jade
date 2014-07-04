@@ -13,10 +13,10 @@ table.table.quizzes
         | {{/link-to}}
       td
         | {{#view App.PreviewLinkView quizBinding='quiz' class='btn btn-info'}}
-        | preview
+        | View
         | {{/view}}
       td
         <button class='btn btn-danger' {{action 'removeQuiz' quiz target='controller.controllers.quizzes'}}>
-        | remove
+        | Remove
         </button>
     | {{/each}}
