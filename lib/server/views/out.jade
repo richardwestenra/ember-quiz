@@ -17,10 +17,13 @@ block body
       .row-fluid
 
         .col-sm-12
+
           h1 #{quiz.title}
 
           if quiz.image
             img.quiz-image(src='#{quiz.image}')
+          
+          p #{quiz.excerpt}
 
         .clearfix
 

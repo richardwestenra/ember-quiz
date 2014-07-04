@@ -10,9 +10,18 @@ div
 
   | {{#if view.record.image}}
 
-  | {{#view view.upload.DropView}}
-  | Change
-  | {{/view}}
+  .form-group
+    .col-sm-10
+
+      | {{#view view.upload.DropView}}
+      | Change
+      | {{/view}}
+
+    <button {{action 'removeImage' view.record target=controller.controllers.quizzes}} type='button' class='col-sm-2 btn btn-danger component upload drop'>
+    | Remove Image
+    </button>
+
+    .clearfix
 
   | {{else}}
 

@@ -8,11 +8,16 @@
   .label.col-sm-2.control-label Title
   .col-sm-10
     | {{input type='text' class='form-control' value=question.title required='required' placeholder='Title of the question'}}
+| {{#if model.isTypeThree}}
+.form-group
+  .label.col-sm-2.control-label Excerpt
+  .col-sm-10
+    | {{textarea class='form-control' value=question.excerpt placeholder='Short description of the question ...' rows='3'}}
+| {{/if}}
 .form-group
   .label.col-sm-2.control-label Image
   .col-sm-10
     | {{view App.UploadView recordBinding='question'}}
-
 .form-group
   .col-sm-offset-9.col-sm-3.text-right
     <button {{action 'removeQuestion' model question target=controller.controllers.quizzes}} type='button' class='btn btn-danger'>
