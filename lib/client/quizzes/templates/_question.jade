@@ -1,47 +1,50 @@
-| {{#if model.isTypeTwo}}
-| {{else}}
+.question.clearfix
+  | {{#if model.isTypeTwo}}
+  | {{else}}
 
-.form-group.error
-  .col-sm-offset-2.col-sm-10
-    | {{question.error}}
-.form-group
-  .label.col-sm-2.control-label Title
-  .col-sm-10
-    | {{input type='text' class='form-control' value=question.title required='required' placeholder='Title of the question'}}
-| {{#if model.isTypeThree}}
-.form-group
-  .label.col-sm-2.control-label Excerpt
-  .col-sm-10
-    | {{textarea class='form-control' value=question.excerpt placeholder='Short description of the question ...' rows='3'}}
-| {{/if}}
-.form-group
-  .label.col-sm-2.control-label Image
-  .col-sm-10
-    | {{view App.UploadView recordBinding='question'}}
-.form-group
-  .col-sm-offset-9.col-sm-3.text-right
-    <button {{action 'removeQuestion' model question target=controller.controllers.quizzes}} type='button' class='btn btn-danger'>
-    | Remove Question
-    </button>
+  .col-sm-12
+    h4 Question 1 (FIXME - add index iterator): {{question.title}}
+  .form-group.error
+      | {{question.error}}
+  .form-group
+    .label.col-sm-2.control-label Title
+    .col-sm-9
+      | {{input type='text' class='form-control' value=question.title required='required' placeholder='Title of the question'}}
+  | {{#if model.isTypeThree}}
+  .form-group
+    .label.col-sm-2.control-label Excerpt
+    .col-sm-10
+      | {{textarea class='form-control' value=question.excerpt placeholder='Short description of the question ...' rows='3'}}
+  | {{/if}}
+  .form-group
+    .label.col-sm-2.control-label Image
+    .col-sm-9
+      | {{view App.UploadView recordBinding='question'}}
 
-| {{/if}}
+  .form-group
+    .col-sm-offset-9.col-sm-3.text-right
+      <button {{action 'removeQuestion' model question target=controller.controllers.quizzes}} type='button' class='btn btn-danger btn-xs'>
+      span.glyphicon.glyphicon-trash
+      |  Remove Question
+      </button>
 
-.row
+  | {{/if}}
 
-  .col-sm-2
+  .row
+    .col-sm-offset-1.col-sm-11
+      h4.col-sm-offset-1.col-sm-11 Answers:
 
-  .col-sm-10
+      | {{#each answer in question.answers}}
 
-    | {{#each answer in question.answers}}
+      include _answer
 
-    include _answer
+      | {{/each}}
 
-    | {{/each}}
+    .clearfix
 
-  .clearfix
-
-.form-group
-  .col-sm-offset-2.col-sm-10
-    <button {{action 'addAnswer' question target=controller.controllers.quizzes}} type='button' class='btn btn-info'>
-    | Add Answer
-    </button>
+  .form-group
+    .col-sm-offset-2.col-sm-10
+      <button {{action 'addAnswer' question target=controller.controllers.quizzes}} type='button' class='btn btn-info'>
+      span.glyphicon.glyphicon-plus
+      |  Add Answer
+      </button>

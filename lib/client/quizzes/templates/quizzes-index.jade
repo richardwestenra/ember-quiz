@@ -8,15 +8,15 @@ table.table.quizzes
     | {{#each quiz in controller.controllers.quizzes}}
     tr
       td
-        | {{#link-to 'quiz.edit' quiz}}
+        | {{#link-to 'quiz.edit' quiz class="edit-link"}}
         | {{quiz.title}}
         | {{/link-to}}
       td
         | {{#view App.PreviewLinkView quizBinding='quiz' class='btn btn-info'}}
-        | preview
+        | View
         | {{/view}}
       td
         <button class='btn btn-danger' {{action 'removeQuiz' quiz target='controller.controllers.quizzes'}}>
-        | remove
+        | Remove
         </button>
     | {{/each}}

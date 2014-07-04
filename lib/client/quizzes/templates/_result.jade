@@ -1,31 +1,34 @@
-.form-group.error
-  .col-sm-offset-2.col-sm-10
-    | {{result.error}}
-.form-group
-  .label.col-sm-2.control-label Title
-  .col-sm-10
-    | {{input type='text' class='form-control' value=result.title required='required' placeholder='Title of the result'}}
-.form-group
-  .label.col-sm-2.control-label Content
-  .col-sm-10
-    | {{textarea type='text' class='form-control' value=result.content required='required' placeholder='Closing paragraph'}}
-| {{#if model.isTypeOne}}
-| {{else}}
-.form-group
-  .label.col-sm-2.control-label Min
-  .col-sm-10
-    | {{input type='text' class='form-control' value=result.min required='required' placeholder='Range min'}}
-.form-group
-  .label.col-sm-2.control-label Max
-  .col-sm-10
-    | {{input type='text' class='form-control' value=result.max required='required' placeholder='Range max'}}
-| {{/if}}
-.form-group
-  .label.col-sm-2.control-label Image
-  .col-sm-10
-    | {{view App.UploadView recordBinding='result'}}
-.form-group
-  .col-sm-offset-2.col-sm-10.text-right
-    <button {{action 'removeResult' model result target=controller.controllers.quizzes}} type='button' class='btn btn-danger'>
-    | Remove Result
-    </button>
+.result.clearfix
+  .col-sm-12
+    h4 Result 1 (FIXME - add index iterator): {{result.title}}
+  .form-group.error
+    .col-sm-offset-2.col-sm-10
+      | {{result.error}}
+  .form-group
+    .label.col-sm-2.control-label Title
+    .col-sm-10
+      | {{input type='text' class='form-control' value=result.title required='required' placeholder='Title of the result'}}
+  .form-group
+    .label.col-sm-2.control-label Content
+    .col-sm-10
+      | {{textarea type='text' class='form-control' value=result.content required='required' placeholder='Closing paragraph'}}
+  | {{#if model.isTypeOne}}
+  | {{else}}
+  .form-group
+    .label.col-sm-2.control-label Image
+    .col-sm-10
+      | {{view App.UploadView recordBinding='result'}}
+  .form-group
+    .label.col-sm-2.control-label Min range value
+    .col-sm-4
+      | {{input type='number' class='form-control' value=result.min required='required' placeholder='Numerical value e.g. 0'}}
+    .label.col-sm-2.control-label Max range value
+    .col-sm-4
+      | {{input type='number' class='form-control' value=result.max required='required' placeholder='Numerical value e.g. 10'}}
+  | {{/if}}
+  .form-group
+    .col-sm-offset-2.col-sm-10.text-right
+      <button {{action 'removeResult' model result target=controller.controllers.quizzes}} type='button' class='btn btn-danger btn-xs'>
+      span.glyphicon.glyphicon-trash
+      |  Remove Result
+      </button>

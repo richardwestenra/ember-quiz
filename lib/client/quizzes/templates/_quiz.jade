@@ -23,44 +23,40 @@
     | {{view Em.Select  class='form-control' valueBinding='model.quizType' contentBinding='controller.controllers.quizzes.quizTypes' optionLabelPath='content.label' optionValuePath='content.value'}}
 
 .row
-
-  .col-sm-2
-
-  .col-sm-10
-
+  .col-sm-12.clearfix
+    h3 Results 
+    p For <em>Multiple Choice</em> quizzes, there should ideally be the same number of results as there are answers for each question. For <em>Checklist</em> and <em>True/False</em> quiz types, supply minimum and maximum values for this range band. e.g. If you have 20 questions and two results, then you might make the first result 0 to 10 and the second one 11 to 20.
     | {{#each result in model.results}}
 
     include _result
 
     | {{/each}}
+  
 
-  .clearfix
-
-.form-group
-  .col-sm-offset-2.col-sm-10
-    <button {{action 'addResult' model target=controller.controllers.quizzes}} type='button' class='btn btn-info'>
-    | Add Result
+    //- .form-group
+    //- .col-sm-offset-2
+    <button {{action 'addResult' model target=controller.controllers.quizzes}} type='button' class='btn btn-info btn-sm'>
+    span.glyphicon.glyphicon-plus
+    |  Add Result
     </button>
+    hr
 
 .row
-
-  .col-sm-2
-
-  .col-sm-10
-
+  .col-sm-12.clearfix
+    h3 Questions
     | {{#each question in model.questions}}
 
     include _question
 
     | {{/each}}
 
-  .clearfix
 
 | {{#if model.isTypeTwo}}
 | {{else}}
 .form-group
-  .col-sm-offset-2.col-sm-10
+  .col-sm-12
     <button {{action 'addQuestion' model target=controller.controllers.quizzes}} type='button' class='btn btn-info'>
-    | Add Question
+    span.glyphicon.glyphicon-plus
+    |  Add Question
     </button>
 | {{/if}}

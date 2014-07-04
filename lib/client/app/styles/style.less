@@ -3,16 +3,24 @@
 @import "lib/client/app/styles/variables";
 
 body {
-  padding-top: 70px;
-  padding-bottom: 100px;
+  padding-bottom: 40px;
+  &.ember-application {
+    padding-top: 70px;
+    padding-bottom: 100px;
+  }
 }
 
 .error{
   color: red;
 }
 
-.quizzes td:nth-of-type(1){
-  width: 80%;
+.quizzes {
+  td:nth-of-type(1){
+    width: 80%;
+  }
+    .edit-link {
+      font-size: 130%;
+    }
 }
 
 // progress
@@ -29,6 +37,11 @@ body {
   border-radius: @border-radius;
   text-align: center;
   // width: 100%;
+  cursor: pointer;
+  transition: ease background 0.2s;
+  &:hover {
+    background: #f7f7f7;
+  }
 }
 .drop.over{
   border: 3px dotted #ddd;
@@ -41,18 +54,53 @@ body {
   border-radius: @border-radius;
 }
 
+form {
+  .question, .result {
+    background: #fafafa;
+    border: 1px solid #eee;
+    padding: 15px 20px;
+    margin: 20px 0;
+    border-radius: @border-radius;
+    h4 {
+      color: #aaa;
+    }
+    .drop:hover {
+      background: #fff;
+    }
+  }
+}
+
 .out{
 
-  p{
+  p {
     padding: 10px;
+  }
+  .checkbox, .radio {
+    font-size: 120%;
+    label {
+      display: block;
+      padding: 5px 8px;
+      padding-left: 28px;
+      margin-left: -20px;
+      border: 1px solid #ddd;
+      background: #fafafa;
+      transition: all ease 0.2s;
+      &:hover {
+        background: #eee;
+        border-color: #ccc;
+      }
+    }
   }
 
   .question-image{
     // width: 100%;
   }
+  .question.form-group {
+    margin: 50px 0;
+  }
+  .result{
+    display: none;
+  }
 
 }
 
-.result{
-  display: none;
-}

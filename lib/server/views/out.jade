@@ -15,68 +15,63 @@ block body
     .quiz
       
       .row-fluid
+        h1 #{quiz.title}
 
-        .col-sm-12
+        if quiz.image
+          img.quiz-image(src='#{quiz.image}')
 
-          h1 #{quiz.title}
+        if quiz.excerpt
+          p.quiz-desc #{quiz.excerpt}
 
-          if quiz.image
-            img.quiz-image(src='#{quiz.image}')
-          
-          p #{quiz.excerpt}
-
-        .clearfix
+        if quiz.author
+          p.quiz-author By #{quiz.author}
 
     each question in quiz.questions
 
-      .question(
+      .question.form-group(
         id='#{question._id}'
       )
         .inner(
           id='#{question._id}-inner'
         )
           .row-fluid
+            h3 #{question.title}
 
-            .col-sm-12
-              h1 #{question.title}
-
-              if question.image
-                img.question-image(src='#{question.image}')
-            .clearfix
+            if question.image
+              img.question-image(src='#{question.image}')
             
-          .row-fluid
+          .row-fluid.clearfix
             each answer in question.answers
 
-              .col-sm-3
+              if answer.image
+                .row-fluid.clearfix
+                  img(src='#{answer.image}')
 
-                if answer.image
-                  .row-fluid
-                    .col-sm-12
-                        img(src='#{answer.image}')
-                    .clearfix
+              .form-group.clearfix(
+                class= quiz.type==1 ? 'checkbox' : 'radio'
+              )
+                label
+                  if quiz.type == 1
+                    input(
+                      type='checkbox'
+                      name='answer-#{question._id}'
+                      data-question='#{question._id}'
+                      data-answer='#{answer._id}'
+                    )
+                  else
+                    input(
+                      type='radio'
+                      name='answer-#{question._id}'
+                      data-question='#{question._id}'
+                      data-answer='#{answer._id}'
+                    )
+                  | #{answer.title}
 
-                .row-fluid
-                  .col-sm-2
-                    p
-                      if quiz.type == 1
-                        input(
-                          type='checkbox'
-                          name='answer-#{question._id}'
-                          data-question='#{question._id}'
-                          data-answer='#{answer._id}'
-                        )
-                      else
-                        input(
-                          type='radio'
-                          name='answer-#{question._id}'
-                          data-question='#{question._id}'
-                          data-answer='#{answer._id}'
-                        )
-                  .col-sm-10
-                    p #{answer.title}
-                  .clearfix
+    if quiz.type == 1
 
-            .clearfix
+      .row-fluid
+        button.btn.btn-default
+          | Show me my results!
 
     each result in quiz.results
 
@@ -85,21 +80,12 @@ block body
       )
 
         if result.image
-          .row-fluid
-            .col-sm-12
-                img(src='#{result.image}')
-            .clearfix
-
-        .row-fluid
-          .col-sm-12
-            p #{result.content}
-          .clearfix
-
-    if quiz.type == 1
-
-      .row-fluid
-        button
-          | show me my results!
+          .row-fluid.clearfix
+            img(src='#{result.image}')
+            
+        .row-fluid.clearfix
+          p #{result.content}
+          
 
   script.
     window.QUIZ = '!{JSON.stringify(quiz)}';
