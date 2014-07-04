@@ -67,6 +67,12 @@ block body
                     )
                   | #{answer.title}
 
+    if quiz.type == 1
+
+      .row-fluid
+        button.btn.btn-default
+          | Show me my results!
+
     each result in quiz.results
 
       .result(
@@ -74,21 +80,12 @@ block body
       )
 
         if result.image
-          .row-fluid
-            .col-sm-12
-                img(src='#{result.image}')
-            .clearfix
-
-        .row-fluid
-          .col-sm-12
-            p #{result.content}
-          .clearfix
-
-    if quiz.type == 1
-
-      .row-fluid
-        button.btn.btn-default
-          | Show me my results!
+          .row-fluid.clearfix
+            img(src='#{result.image}')
+            
+        .row-fluid.clearfix
+          p #{result.content}
+          
 
   script.
     window.QUIZ = '!{JSON.stringify(quiz)}';

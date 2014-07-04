@@ -23,6 +23,7 @@
     | {{view App.UploadView recordBinding='answer'}}
 .form-group
   .col-sm-offset-2.col-sm-10.text-right
-    <button {{action 'removeAnswer' question answer target=controller.controllers.quizzes}} type='button' class='btn btn-danger'>
-    | Remove Answer
+    <button {{action 'removeAnswer' question answer target=controller.controllers.quizzes}} type='button' class='btn btn-danger btn-xs'>
+    span.glyphicon.glyphicon-trash
+    |  Remove Answer
     </button>

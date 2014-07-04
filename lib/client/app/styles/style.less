@@ -2,9 +2,12 @@
 @import "lib/client/app/styles/mixins";
 @import "lib/client/app/styles/variables";
 
-body.ember-application {
-  padding-top: 70px;
-  padding-bottom: 100px;
+body {
+  padding-bottom: 40px;
+  &.ember-application {
+    padding-top: 70px;
+    padding-bottom: 100px;
+  }
 }
 
 .error{
@@ -51,6 +54,22 @@ body.ember-application {
   border-radius: @border-radius;
 }
 
+form {
+  .question, .result {
+    background: #fafafa;
+    border: 1px solid #eee;
+    padding: 15px 20px;
+    margin: 20px 0;
+    border-radius: @border-radius;
+    h4 {
+      color: #aaa;
+    }
+    .drop:hover {
+      background: #fff;
+    }
+  }
+}
+
 .out{
 
   p {
@@ -79,9 +98,9 @@ body.ember-application {
   .question.form-group {
     margin: 50px 0;
   }
+  .result{
+    display: none;
+  }
 
 }
 
-.result{
-  display: none;
-}
