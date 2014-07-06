@@ -15,7 +15,7 @@
 .form-group
   .label.col-sm-2.control-label Value
   .col-sm-10
-    | {{view Em.Select class='form-control' valueBinding='answer.value' contentBinding='controller.controllers.quizzes.booleans' prompt='Select value:'}}
+    | {{view Em.Select class='form-control' valueBinding='answer.value' contentBinding='controller.controllers.quizzes.booleans' prompt='Select value:' optionLabelPath='content.key' optionValuePath='content.value'}}
 | {{/if}}
 .form-group
   .label.col-sm-2.control-label Image
