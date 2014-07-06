@@ -23,8 +23,8 @@ block body
         if quiz.excerpt
           p.quiz-desc #{quiz.excerpt}
 
-        if quiz.author
-          p.quiz-author By #{quiz.author}
+        if quiz.fullName
+          p.quiz-author By #{quiz.fullName}
 
     each question in quiz.questions
 
