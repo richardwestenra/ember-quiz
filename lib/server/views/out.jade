@@ -88,7 +88,7 @@ block body
           
 
   script.
-    window.QUIZ = '!{JSON.stringify(quiz)}';
+    window.QUIZ =  JSON.parse(!{JSON.stringify(quiz_str)});
 
   script(
     type='text/javascript'
