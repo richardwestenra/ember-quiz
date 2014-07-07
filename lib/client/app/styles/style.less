@@ -93,13 +93,20 @@ form {
   .title {
     .tradeBdCn;
     font-size: 40px;
+    padding-bottom: 5px;
+    border-bottom: 5px solid fade(@c_primary,50%);
   }
   img {
     max-width: 100%;
     height: auto;
-    &.quiz-image {
+    &.quiz-image,
+    &.questions-image {
       display: block;
       margin: 1em 0;
+    }
+    // nbed
+    &.testImage {
+      display: none;
     }
   }
   .checkbox, .radio {
@@ -113,8 +120,8 @@ form {
       background: #fafafa;
       transition: all ease 0.2s;
       &:hover {
-        background: #eee;
-        border-color: #ccc;
+        background: @c_secondary_light;
+        border-color: @c_secondary;
       }
     }
   }
@@ -155,8 +162,8 @@ form {
   }
   .result{
     display: none;
-    background: #fafafa;
-    border: 1px solid #eee;
+    background: @c_secondary_light;
+    border: 1px solid @c_secondary;
     padding: 15px 20px;
     margin: 20px 0;
     border-radius: @border-radius;
@@ -165,9 +172,43 @@ form {
     }
   }
   .inlineResult {
+    background: #fafafa;
+    border: 1px solid #eee;
+    padding: 15px 20px;
+    margin: 20px 0;
+    margin: 1em 0;
+    h4 {
+      .tradeBdCn;
+      font-size: 30px;
+      margin-top: 0;
+      border-bottom: 2px solid #bbb;
+      padding-bottom: 3px;
+      span {
+        font-size: 23px;
+      }
+    }
+    &.correct {
+      background-color: fade(@c_primary_light,20%);
+      border-color: @c_primary_light;
+      h4 {
+        color: @c_primary;
+        border-color: fade(@c_primary,30%);
+      }
+    }
+    &.wrong {
+      background-color: fade(@c_link_light,30%);
+      border-color: @c_link_light;
+      h4 {
+        color: @c_link;
+        border-color: fade(@c_link,30%);
+      }
+    }
   }
 
-  .logo {
+  .footer {
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 5px solid fade(@c_primary,50%);
     // display: block;
   }
 

@@ -27,7 +27,8 @@ block body
 
           if quiz.image
             img.quiz-image(src='#{quiz.image}')
-          //- img.quiz-image(src='https://s3-us-west-2.amazonaws.com/quiz-maker-2/2014-07-06t14-17-06-614z')
+          //- img.quiz-image.testImage(src='https://s3-us-west-2.amazonaws.com/quiz-maker-2/2014-07-06t14-17-06-614z')
+          //- nbed
 
           if quiz.excerpt
             p.quiz-desc #{quiz.excerpt}
@@ -46,6 +47,8 @@ block body
 
               if question.image
                 img.question-image(src='#{question.image}')
+              //- img.question-image.testImage(src='https://s3-us-west-2.amazonaws.com/quiz-maker-2/2014-07-06t14-17-06-614z')
+              //- nbed
               
             .row-fluid.clearfix
               each answer in question.answers
@@ -59,7 +62,8 @@ block body
                   label
                     if answer.image
                       img(src='#{answer.image}')
-                    //- img.quiz-image(src='https://s3-us-west-2.amazonaws.com/quiz-maker-2/2014-07-06t16-26-19-559z')
+                    //- img.quiz-image.testImage(src='https://s3-us-west-2.amazonaws.com/quiz-maker-2/2014-07-06t16-26-19-559z')
+                    //- nbed
                     if quiz.type == 1
                       input(
                         type='checkbox'
@@ -91,20 +95,21 @@ block body
             h3.resultTitle #{result.title}
           if result.image
             img.resultImage(src='#{result.image}')
-          //- img.resultImage(src='https://s3-us-west-2.amazonaws.com/quiz-maker-2/2014-07-06t14-17-06-614z')
+          //- img.resultImage.testImage(src='https://s3-us-west-2.amazonaws.com/quiz-maker-2/2014-07-06t14-17-06-614z')
+          //- nbed
           p.resultPara #{result.content}
           
-
-      a.logo.pull-right(
-        href="http://www.rasmussen.edu/"
-        target="_blank"
-      ) 
-        img(
-          alt="Rasmussen College"
-          src="http://www.rasmussen.edu/images/header/logo-internal-date.png"
-          width="210"
-          height="45"
-        )
+      .footer
+        a.logo.pull-right(
+          href="http://www.rasmussen.edu/"
+          target="_blank"
+        ) 
+          img(
+            alt="Rasmussen College"
+            src="http://www.rasmussen.edu/images/header/logo-internal-date.png"
+            width="210"
+            height="45"
+          )
 
   script.
     window.QUIZ =  JSON.parse(!{JSON.stringify(quiz_str)});
