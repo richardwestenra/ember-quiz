@@ -15,7 +15,7 @@ block body
       .quiz
         
         .row-fluid
-          h1 #{quiz.title}
+          h1.title #{quiz.title}
 
           if quiz.image
             img.quiz-image(src='#{quiz.image}')
@@ -95,3 +95,11 @@ block body
     type='text/javascript'
     src='/out.js'
   )
+
+  script(
+    type='text/javascript'
+    src='https://cdn.rawgit.com/npr/responsiveiframe/master/dist/jquery.responsiveiframe.min.js'
+  )
+  script.
+    var ri = responsiveIframe();
+    ri.allowResponsiveEmbedding();
