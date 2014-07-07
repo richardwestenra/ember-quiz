@@ -9,14 +9,22 @@ table.table.quizzes
     tr
       td
         | {{#link-to 'quiz.edit' quiz class="edit-link"}}
-        | {{quiz.title}}
+        | {{quiz.title}} 
+        span.glyphicon.glyphicon-pencil
         | {{/link-to}}
       td
+        <button class='btn btn-default' {{action 'showEmbed' quiz target='controller.controllers.quizzes'}}>
+        span.glyphicon.glyphicon-cog
+        |  Embed
+        </button>
+      td
         | {{#view App.PreviewLinkView quizBinding='quiz' class='btn btn-info'}}
-        | View
+        span.glyphicon.glyphicon-globe
+        |  View
         | {{/view}}
       td
         <button class='btn btn-danger' {{action 'removeQuiz' quiz target='controller.controllers.quizzes'}}>
-        | Remove
+        span.glyphicon.glyphicon-trash
+        |  Remove
         </button>
     | {{/each}}
