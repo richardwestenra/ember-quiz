@@ -32,7 +32,9 @@
 
   .row
     | {{#view App.IndentView quizBinding='model'}}
+    | {{#unless model.isTypeTwo}}
     h4.col-sm-offset-1.col-sm-11 Answers:
+    | {{/unless}}
     | {{#each answer in question.answers}}
 
     include _answer
