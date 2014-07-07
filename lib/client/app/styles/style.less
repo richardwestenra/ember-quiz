@@ -71,9 +71,12 @@ form {
 }
 
 .out{
-
-  p {
-    padding: 10px;
+  .container {
+    max-width: 700px;
+  }
+  img {
+    max-width: 100%;
+    height: auto;
   }
   .checkbox, .radio {
     font-size: 120%;
@@ -91,6 +94,34 @@ form {
       }
     }
   }
+  .hasImage, .noImage { //nbed: remove noImage (it's only for testing)
+    width: 50%;
+    float: left;
+    margin-top: 0;
+    margin-bottom: 20px;
+    padding-left: 0;
+    box-sizing: border-box;
+    &:nth-child(odd){
+      padding-right: 10px;
+    }
+    &:nth-child(even){
+      padding-left: 10px;
+    }
+    label {
+      padding: 8px;
+      margin-left: 0;
+      img {
+        width: 100%;
+        height: auto;
+        display: block;
+        margin-bottom: 5px;
+      }
+      input {
+        margin-left: 0;
+        margin-right: 10px;
+      }
+    }
+  }
 
   .question-image{
     // width: 100%;
@@ -100,6 +131,8 @@ form {
   }
   .result{
     display: none;
+  }
+  .inlineResult {
   }
 
 }
