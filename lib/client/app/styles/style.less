@@ -31,24 +31,29 @@ body {
 
 // drop
 
-.drop{
+.drop {
   padding: 10px 0;
+  box-sizing: border-box;
+  // width: 100%;
+}
+div.drop {
   border: 3px dashed #ddd;
+  padding: 8px 0;
   border-radius: @border-radius;
   text-align: center;
-  // width: 100%;
   cursor: pointer;
   transition: ease background 0.2s;
+  &.over{
+    border: 3px dotted #ddd;
+  }
   &:hover {
     background: #f7f7f7;
   }
 }
-.drop.over{
-  border: 3px dotted #ddd;
-}
 
 .form-image{
-  max-width: 100%;
+  max-width: 200px;
+  height: auto;
   border: 2px solid #ddd;
   margin-bottom: 10px;
   border-radius: @border-radius;
@@ -64,7 +69,7 @@ form {
     h4 {
       color: #aaa;
     }
-    .drop:hover {
+    div.drop:hover {
       background: #fff;
     }
   }
