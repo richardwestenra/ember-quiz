@@ -3,7 +3,7 @@
   | {{else}}
 
   .col-sm-12
-    h4 Question 1 (FIXME - add index iterator): {{question.title}}
+    h4 Question {{question.__index}}: {{question.title}}
   .form-group.error
       | {{question.error}}
   .form-group
