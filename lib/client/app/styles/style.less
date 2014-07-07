@@ -2,6 +2,14 @@
 @import "lib/client/app/styles/mixins";
 @import "lib/client/app/styles/variables";
 
+// @fonts:
+.tradeReg { font-family:"TradeGothicNextRegular", 'Trade Gothic Next W01',Trade Gothic Next, sans-serif; }
+.tradeComp { font-family:"TradeGothicNextCompressed", 'TradeGothicNextW01-Cm',Trade Gothic Next, sans-serif; }
+.tradeBold { font-family:"TradeGothicNextBold", 'TradeGothicNextW01-Bold 693229',Trade Gothic Next, sans-serif; }
+.tradeBdCn { font-family:"TradeGothicNextCondensedBold", 'TradeGothicNextW01-Bold 693232',Trade Gothic Next, sans-serif; }
+.tradeLight { font-family:"TradeGothicNextLight", 'TradeGothicNextW01-Ligh 693250',Trade Gothic Next, sans-serif; }
+
+
 body {
   padding-bottom: 40px;
   &.ember-application {
@@ -31,24 +39,29 @@ body {
 
 // drop
 
-.drop{
+.drop {
   padding: 10px 0;
+  box-sizing: border-box;
+  // width: 100%;
+}
+div.drop {
   border: 3px dashed #ddd;
+  padding: 8px 0;
   border-radius: @border-radius;
   text-align: center;
-  // width: 100%;
   cursor: pointer;
   transition: ease background 0.2s;
+  &.over{
+    border: 3px dotted #ddd;
+  }
   &:hover {
     background: #f7f7f7;
   }
 }
-.drop.over{
-  border: 3px dotted #ddd;
-}
 
 .form-image{
-  max-width: 100%;
+  max-width: 200px;
+  height: auto;
   border: 2px solid #ddd;
   margin-bottom: 10px;
   border-radius: @border-radius;
@@ -64,16 +77,30 @@ form {
     h4 {
       color: #aaa;
     }
-    .drop:hover {
+    div.drop:hover {
       background: #fff;
     }
   }
 }
 
 .out{
+  .tradeReg;
+  background: @c_bg;
 
-  p {
-    padding: 10px;
+  .container {
+    max-width: 700px;
+  }
+  .title {
+    .tradeBdCn;
+    font-size: 40px;
+  }
+  img {
+    max-width: 100%;
+    height: auto;
+    &.quiz-image {
+      display: block;
+      margin: 1em 0;
+    }
   }
   .checkbox, .radio {
     font-size: 120%;
@@ -91,6 +118,34 @@ form {
       }
     }
   }
+  .hasImage {
+    width: 50%;
+    float: left;
+    margin-top: 0;
+    margin-bottom: 20px;
+    padding-left: 0;
+    box-sizing: border-box;
+    &:nth-child(odd){
+      padding-right: 10px;
+    }
+    &:nth-child(even){
+      padding-left: 10px;
+    }
+    label {
+      padding: 8px;
+      margin-left: 0;
+      img {
+        width: 100%;
+        height: auto;
+        display: block;
+        margin-bottom: 5px;
+      }
+      input {
+        margin-left: 0;
+        margin-right: 10px;
+      }
+    }
+  }
 
   .question-image{
     // width: 100%;
@@ -100,6 +155,20 @@ form {
   }
   .result{
     display: none;
+    background: #fafafa;
+    border: 1px solid #eee;
+    padding: 15px 20px;
+    margin: 20px 0;
+    border-radius: @border-radius;
+    .resultTitle {
+      margin-top: 0;
+    }
+  }
+  .inlineResult {
+  }
+
+  .logo {
+    // display: block;
   }
 
 }

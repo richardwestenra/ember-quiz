@@ -25,7 +25,11 @@
 .row
   .col-sm-12.clearfix
     h3 Results 
-    p For <em>Multiple Choice</em> quizzes, there should ideally be the same number of results as there are answers for each question. For <em>Checklist</em> and <em>True/False</em> quiz types, supply minimum and maximum values for this range band. e.g. If you have 20 questions and two results, then you might make the first result 0 to 10 and the second one 11 to 20.
+    | {{#if model.isTypeOne}}
+    p <strong>Note:</strong> There should ideally be the same number of results as there are answers for each question, but this is not compulsory.
+    | {{else}}
+    p <strong>Note:</strong> Each result applies to a range band, e.g. If you have 20 questions and two results, then you might make the first result show for users who answer between 0 and 10, and the second one show between 11 and 20. Supply numerical minimum and maximum values for each range band.
+    | {{/if}}
     | {{#each result in model.results}}
 
     include _result
@@ -42,8 +46,12 @@
     hr
 
 .row
-  .col-sm-12.clearfix
+  .col-sm-12
+    | {{#if model.isTypeTwo}}
+    h3 Checkbox rows
+    | {{else}}
     h3 Questions
+    | {{/if}}
     | {{#each question in model.questions}}
 
     include _question
@@ -51,12 +59,11 @@
     | {{/each}}
 
 
-| {{#if model.isTypeTwo}}
-| {{else}}
+| {{#unless model.isTypeTwo}}
 .form-group
   .col-sm-12
     <button {{action 'addQuestion' model target=controller.controllers.quizzes}} type='button' class='btn btn-info'>
     span.glyphicon.glyphicon-plus
     |  Add Question
     </button>
-| {{/if}}
+| {{/unless}}
