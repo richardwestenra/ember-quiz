@@ -19,6 +19,7 @@ block body
 
           if quiz.image
             img.quiz-image(src='#{quiz.image}')
+          img.quiz-image(src='https://s3-us-west-2.amazonaws.com/quiz-maker-2/2014-07-06t14-17-06-614z')
 
           if quiz.excerpt
             p.quiz-desc #{quiz.excerpt}
@@ -52,6 +53,7 @@ block body
                   label
                     if answer.image
                       img(src='#{answer.image}')
+                    img.quiz-image(src='https://s3-us-west-2.amazonaws.com/quiz-maker-2/2014-07-06t16-26-19-559z')
                     if quiz.type == 1
                       input(
                         type='checkbox'
@@ -95,7 +97,7 @@ block body
     type='text/javascript'
     src='/out.js'
   )
-
+    
   script(
     type='text/javascript'
     src='https://cdn.rawgit.com/npr/responsiveiframe/master/dist/jquery.responsiveiframe.min.js'
