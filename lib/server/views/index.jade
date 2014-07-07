@@ -9,18 +9,18 @@ block head
   )
 
 block body
-
-  script(
-    type='text/javascript'
-    src='/app/vendor/nprogress.js'
-  )
-  script.
-    NProgress.start();
-    NProgress.set(0.4);
-  script.
-    window.S3 = '!{JSON.stringify(config.S3)}';
-    S3 = JSON.parse(S3);
-  script(
-    type='text/javascript'
-    src='/app.js'
-  )
+  body
+    script(
+      type='text/javascript'
+      src='/app/vendor/nprogress.js'
+    )
+    script.
+      NProgress.start();
+      NProgress.set(0.4);
+    script.
+      window.S3 = '!{JSON.stringify(config.S3)}';
+      S3 = JSON.parse(S3);
+    script(
+      type='text/javascript'
+      src='/app.js'
+    )
