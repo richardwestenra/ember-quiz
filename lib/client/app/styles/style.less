@@ -2,6 +2,14 @@
 @import "lib/client/app/styles/mixins";
 @import "lib/client/app/styles/variables";
 
+// @fonts:
+.tradeReg { font-family:"TradeGothicNextRegular", 'Trade Gothic Next W01',Trade Gothic Next, sans-serif; }
+.tradeComp { font-family:"TradeGothicNextCompressed", 'TradeGothicNextW01-Cm',Trade Gothic Next, sans-serif; }
+.tradeBold { font-family:"TradeGothicNextBold", 'TradeGothicNextW01-Bold 693229',Trade Gothic Next, sans-serif; }
+.tradeBdCn { font-family:"TradeGothicNextCondensedBold", 'TradeGothicNextW01-Bold 693232',Trade Gothic Next, sans-serif; }
+.tradeLight { font-family:"TradeGothicNextLight", 'TradeGothicNextW01-Ligh 693250',Trade Gothic Next, sans-serif; }
+
+
 body {
   padding-bottom: 40px;
   &.ember-application {
@@ -76,12 +84,23 @@ form {
 }
 
 .out{
+  .tradeReg;
+  background: @c_bg;
+
   .container {
     max-width: 700px;
+  }
+  .title {
+    .tradeBdCn;
+    font-size: 40px;
   }
   img {
     max-width: 100%;
     height: auto;
+    &.quiz-image {
+      display: block;
+      margin: 1em 0;
+    }
   }
   .checkbox, .radio {
     font-size: 120%;
@@ -146,6 +165,10 @@ form {
     }
   }
   .inlineResult {
+  }
+
+  .logo {
+    // display: block;
   }
 
 }

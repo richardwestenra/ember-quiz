@@ -7,6 +7,10 @@ block head
     rel='stylesheet'
     media='screen'
   )
+  script(
+    type='text/javascript'
+    src='http://fast.fonts.net/jsapi/7701dc6b-2a73-4858-972c-07b9d695c0a8.js'
+  )
 
 block body
   body.out
@@ -17,6 +21,10 @@ block body
         .row-fluid
           h1.title #{quiz.title}
 
+          if quiz.fullName
+            p.quiz-author
+              em By #{quiz.fullName}
+
           if quiz.image
             img.quiz-image(src='#{quiz.image}')
           img.quiz-image(src='https://s3-us-west-2.amazonaws.com/quiz-maker-2/2014-07-06t14-17-06-614z')
@@ -24,8 +32,6 @@ block body
           if quiz.excerpt
             p.quiz-desc #{quiz.excerpt}
 
-          if quiz.fullName
-            p.quiz-author By #{quiz.fullName}
 
       each question in quiz.questions
 
@@ -83,11 +89,22 @@ block body
         )
           if result.title
             h3.resultTitle #{result.title}
-          img.quiz-image(src='https://s3-us-west-2.amazonaws.com/quiz-maker-2/2014-07-06t14-17-06-614z')
           if result.image
             img.resultImage(src='#{result.image}')
+          img.resultImage(src='https://s3-us-west-2.amazonaws.com/quiz-maker-2/2014-07-06t14-17-06-614z')
           p.resultPara #{result.content}
           
+
+      a.logo.pull-right(
+        href="http://www.rasmussen.edu/"
+        target="_blank"
+      ) 
+        img(
+          alt="Rasmussen College"
+          src="http://www.rasmussen.edu/images/header/logo-internal-date.png"
+          width="210"
+          height="45"
+        )
 
   script.
     window.QUIZ =  JSON.parse(!{JSON.stringify(quiz_str)});
