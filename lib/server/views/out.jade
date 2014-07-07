@@ -78,16 +78,15 @@ block body
 
       each result in quiz.results
 
-        .result(
+        .result.clearfix(
           id='#{result._id}'
         )
-
+          if result.title
+            h3.resultTitle #{result.title}
+          img.quiz-image(src='https://s3-us-west-2.amazonaws.com/quiz-maker-2/2014-07-06t14-17-06-614z')
           if result.image
-            .row-fluid.clearfix
-              img(src='#{result.image}')
-              
-          .row-fluid.clearfix
-            p #{result.content}
+            img.resultImage(src='#{result.image}')
+          p.resultPara #{result.content}
           
 
   script.
