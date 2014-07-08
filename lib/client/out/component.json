@@ -6,5 +6,8 @@
     "index.js"
   ],
   "styles": [
+  ],
+  "images": [
+    "logo-internal-date.png"
   ]
 }

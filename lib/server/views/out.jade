@@ -7,10 +7,11 @@ block head
     rel='stylesheet'
     media='screen'
   )
-  script(
-    type='text/javascript'
-    src='http://fast.fonts.net/jsapi/7701dc6b-2a73-4858-972c-07b9d695c0a8.js'
-  )
+  if prod
+    script(
+      type='text/javascript'
+      src='http://fast.fonts.net/jsapi/7701dc6b-2a73-4858-972c-07b9d695c0a8.js'
+    )
 
 block body
   body.out
@@ -101,14 +102,14 @@ block body
           
       .footer
         a.logo.pull-right(
-          href="http://www.rasmussen.edu/"
-          target="_blank"
+          href='http://www.rasmussen.edu/'
+          target='_blank'
         ) 
           img(
-            alt="Rasmussen College"
-            src="http://www.rasmussen.edu/images/header/logo-internal-date.png"
-            width="210"
-            height="45"
+            alt='Rasmussen College'
+            src='/out/logo-internal-date.png'
+            width='210'
+            height='45'
           )
 
   script.
@@ -118,11 +119,13 @@ block body
     type='text/javascript'
     src='/out.js'
   )
-    
-  script(
-    type='text/javascript'
-    src='https://cdn.rawgit.com/npr/responsiveiframe/master/dist/jquery.responsiveiframe.min.js'
-  )
-  script.
-    var ri = responsiveIframe();
-    ri.allowResponsiveEmbedding();
+
+  if prod
+
+    script(
+      type='text/javascript'
+      src='https://cdn.rawgit.com/npr/responsiveiframe/master/dist/jquery.responsiveiframe.min.js'
+    )
+    script.
+      var ri = responsiveIframe();
+      ri.allowResponsiveEmbedding();
