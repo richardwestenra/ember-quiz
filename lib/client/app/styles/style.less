@@ -94,7 +94,7 @@ form {
     .tradeBdCn;
     font-size: 40px;
     padding-bottom: 5px;
-    border-bottom: 5px solid fade(@c_primary,50%);
+    border-bottom: 5px solid @c_primary;
   }
   img {
     max-width: 100%;
@@ -103,10 +103,6 @@ form {
     &.question-image {
       display: block;
       margin: 1em 0;
-    }
-    // nbed
-    &.testImage {
-      // display: none;
     }
   }
   .checkbox, .radio {
@@ -209,8 +205,7 @@ form {
   .footer {
     margin-top: 40px;
     padding-top: 20px;
-    border-top: 5px solid fade(@c_primary,50%);
-    // display: block;
+    border-top: 5px solid @c_primary;
   }
 
 }
