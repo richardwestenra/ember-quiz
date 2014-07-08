@@ -167,30 +167,27 @@ form {
     padding: 15px 20px;
     margin: 20px 0;
     border-radius: @border-radius;
-    .resultTitle {
-      margin-top: 0;
-    }
   }
+    .resultTitle {
+      .tradeBdCn;
+      font-size: 30px;
+      margin-top: 0;
+      border-bottom: 2px solid fade(darken(@c_secondary,40%),25%);
+      padding-bottom: 3px;
+      span {
+        font-size: 23px;
+      }
+    }
   .inlineResult {
     background: #fafafa;
     border: 1px solid #eee;
     padding: 15px 20px;
     margin: 20px 0;
     margin: 1em 0;
-    h4 {
-      .tradeBdCn;
-      font-size: 30px;
-      margin-top: 0;
-      border-bottom: 2px solid #bbb;
-      padding-bottom: 3px;
-      span {
-        font-size: 23px;
-      }
-    }
     &.correct {
       background-color: fade(@c_primary_light,20%);
       border-color: @c_primary_light;
-      h4 {
+      .resultTitle {
         color: @c_primary;
         border-color: fade(@c_primary,30%);
       }
@@ -198,7 +195,7 @@ form {
     &.wrong {
       background-color: fade(@c_link_light,30%);
       border-color: @c_link_light;
-      h4 {
+      .resultTitle {
         color: @c_link;
         border-color: fade(@c_link,30%);
       }
