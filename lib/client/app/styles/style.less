@@ -100,7 +100,8 @@ form {
     max-width: 100%;
     height: auto;
     &.quiz-image,
-    &.question-image {
+    &.question-image,
+    &.result-image {
       display: block;
       margin: 1em 0;
     }
@@ -163,7 +164,7 @@ form {
     margin: 20px 0;
     border-radius: @border-radius;
   }
-    .resultTitle {
+    .result-title {
       .tradeBdCn;
       font-size: 30px;
       margin-top: 0;
@@ -186,7 +187,7 @@ form {
     &.correct {
       background-color: fade(@c_primary_light,20%);
       border-color: @c_primary_light;
-      .resultTitle {
+      .result-title {
         color: @c_primary;
         border-color: fade(@c_primary,30%);
       }
@@ -194,7 +195,7 @@ form {
     &.wrong {
       background-color: fade(@c_link_light,30%);
       border-color: @c_link_light;
-      .resultTitle {
+      .result-title {
         color: @c_link;
         border-color: fade(@c_link,30%);
       }

@@ -11,13 +11,13 @@
   .form-group
     .label.col-sm-2.control-label Content
     .col-sm-10
-      | {{textarea type='text' class='form-control' value=result.content required='required' placeholder='Closing paragraph'}}
-  | {{#if model.isTypeOne}}
-  | {{else}}
+      | {{textarea type='text' class='form-control' value=result.content placeholder='Closing paragraph'}}
   .form-group
     .label.col-sm-2.control-label Image
     .col-sm-10
       | {{view App.UploadView recordBinding='result'}}
+  | {{#if model.isTypeOne}}
+  | {{else}}
   .form-group
     .label.col-sm-2.control-label Min range value
     .col-sm-4
