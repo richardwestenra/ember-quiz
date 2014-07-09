@@ -83,23 +83,9 @@ block body
 
       #finalResult
         if quiz.type == 1
-
           .row-fluid
             button#submitBtn.btn.btn-default
               | Show me my results!
-
-        each result in quiz.results
-
-          .result.clearfix(
-            id='#{result._id}'
-          )
-            if result.title
-              h3.resultTitle #{result.title}
-            if result.image
-              img.resultImage(src='#{result.image}')
-            //- img.resultImage.testImage(src='https://s3-us-west-2.amazonaws.com/quiz-maker-2/2014-07-06t14-17-06-614z')
-            //- nbed
-            p.resultPara #{result.content}
           
       .footer
         a.logo.pull-right(
