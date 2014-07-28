@@ -12,6 +12,92 @@ block head
       type='text/javascript'
       src='http://fast.fonts.net/jsapi/7701dc6b-2a73-4858-972c-07b9d695c0a8.js'
     )
+  
+  if quiz.metaTitle
+    title #{quiz.metaTitle}
+    meta(
+      name="twitter:title"
+      content='#{quiz.metaTitle}'
+    )
+    meta(
+      property="og:title"
+      content='#{quiz.metaTitle}'
+    )
+    meta(
+      itemprop="name"
+      content='#{quiz.metaTitle}'
+    )
+  else 
+    title #{quiz.title}
+    meta(
+      name="twitter:title"
+      content='#{quiz.title}'
+    )
+    meta(
+      property="og:title"
+      content='#{quiz.title}'
+    )
+    meta(
+      itemprop="name"
+      content='#{quiz.title}'
+    )
+  
+  if quiz.metaDesc
+    meta(
+      name='description'
+      content='#{quiz.metaDesc}'
+    )
+    meta(
+      name="twitter:description"
+      content='#{quiz.metaDesc}'
+    )
+    meta(
+      property="og:description"
+      content='#{quiz.metaDesc}'
+    )
+    meta(
+      itemprop="description"
+      content='#{quiz.metaDesc}'
+    )
+
+  if quiz.metaImage
+    meta(
+      property="og:image"
+      content="#{quiz.metaImage}"
+    )
+    meta(
+      itemprop="image"
+      content="#{quiz.metaImage}"
+    )
+    meta(
+      property="og:image"
+      content="#{quiz.metaImage}"
+    )
+
+  if quiz.url
+    meta(
+      property="og:url"
+      content='#{quiz.url}'
+    )
+
+  meta(
+    name="twitter:card" content="summary_large_image"
+  )
+  meta(
+    name="twitter:site"
+    content="Rasmussen"
+  )
+  script
+    var addthis_share = addthis_share || {};
+    addthis_share = {
+      passthrough : {
+        twitter: {
+          via: "Rasmussen",
+          text: "#{quiz.metaTitle}",
+          url: "#{quiz.url}"
+        }
+      }
+    };
 
 block body
   body.out
@@ -88,16 +174,25 @@ block body
               | Show me my results!
           
       .footer
-        a.logo.pull-right(
-          href='http://www.rasmussen.edu/'
-          target='_blank'
-        ) 
-          img(
-            alt='Rasmussen College'
-            src='/out/rasmussen-logo.png'
-            width='210'
-            height='45'
-          )
+        div.addthis_toolbox.addthis_default_style.addthis_32x32_style.addthis_horizontal.col-sm-6
+            a.addthis_button_facebook
+            a.addthis_button_twitter
+            a.addthis_button_google_plusone_share
+            a.addthis_button_linkedin
+            a.addthis_button_compact
+            a.addthis_counter.addthis_bubble_style
+    
+        .logoContainer.col-sm-6
+          a.logo(
+            href='http://www.rasmussen.edu/'
+            target='_blank'
+          ) 
+            img(
+              alt='Rasmussen College'
+              src='/out/rasmussen-logo.png'
+              width='210'
+              height='45'
+            )
 
   script.
     window.QUIZ =  JSON.parse(!{JSON.stringify(quiz_str)});
@@ -113,6 +208,10 @@ block body
       type='text/javascript'
       src='https://cdn.rawgit.com/npr/responsiveiframe/master/dist/jquery.responsiveiframe.min.js'
     )
-    script.
+    script
       var ri = responsiveIframe();
       ri.allowResponsiveEmbedding();
+
+    script(
+      src="//s7.addthis.com/js/300/addthis_widget.js"
+    )

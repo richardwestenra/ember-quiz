@@ -12,15 +12,37 @@
 .form-group
   .label.col-sm-2.control-label Excerpt
   .col-sm-10
-    | {{textarea class='form-control' value=model.excerpt placeholder='Short description of the quiz ...' rows='3'}}
+    | {{textarea class='form-control' value=model.excerpt placeholder='Short description of the quiz' rows='3'}}
 .form-group
   .label.col-sm-2.control-label Author
   .col-sm-10
-    | {{input type='text' class='form-control' value=model.fullName placeholder='Enter your Full Name like Alan Smithee'}}
+    | {{input type='text' class='form-control' value=model.fullName placeholder='Your name, e.g. Alan Smithee'}}
 .form-group
   .label.col-sm-2.control-label Quiz type
   .col-sm-10
     | {{view Em.Select  class='form-control' valueBinding='model.quizType' contentBinding='controller.controllers.quizzes.quizTypes' optionLabelPath='content.label' optionValuePath='content.value'}}
+
+.row
+  .col-sm-12
+    h4 Social &amp; Meta tags:
+    .form-group
+      .label.col-sm-2.control-label URL
+      .col-sm-10
+        | {{input type='text' class='form-control' value=model.url placeholder='The URL for the page that the quiz will live on.'}} 
+    .form-group
+      .label.col-sm-2.control-label Meta title
+      .col-sm-10
+        | {{input type='text' class='form-control' value=model.metaTitle placeholder='The title for the page in search engines, social media, etc. Should be less than 90 characters.'}} 
+    .form-group
+      .label.col-sm-2.control-label Meta description
+      .col-sm-10
+        | {{textarea class='form-control' value=model.metaDesc placeholder='The description for the page in search engines, social media, etc. Should be less than 200 characters.' rows='3'}}
+    .form-group
+      .label.col-sm-2.control-label Social image (for Facebook etc)
+      .col-sm-10
+        | {{view App.UploadView recordBinding='model'}}
+    
+hr
 
 .row
   .col-sm-12.clearfix

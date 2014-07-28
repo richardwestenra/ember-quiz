@@ -206,6 +206,25 @@ form {
     margin-top: 40px;
     padding-top: 20px;
     border-top: 5px solid @c_primary;
+    .logoContainer,.addthis_toolbox {
+      padding: 0;
+    }
+    .logoContainer {
+      text-align: right;
+    }
+    @media screen and (max-width: @grid-float-breakpoint){
+      .logoContainer,.addthis_toolbox {
+        text-align: center;
+        margin: 10px auto; 
+        display: block;
+        width: auto;
+      }
+      .addthis_toolbox {
+        max-width: 300px;
+        left: 10px;
+        margin-bottom: 40px;
+      }
+    }
   }
 
 }
