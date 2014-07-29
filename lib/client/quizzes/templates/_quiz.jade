@@ -34,9 +34,9 @@
       .col-sm-10
         | {{input type='text' class='form-control' value=model.metaTitle placeholder='The title for the page in search engines, social media, etc. Should be less than 90 characters.' max='90'}}
     .form-group
-      .label.col-sm-2.control-label Meta tweet
+      .label.col-sm-2.control-label Tweet 
       .col-sm-10
-        | {{input type='text' class='form-control' value=model.metaTweet placeholder='A tweet message. Should be less than 30 characters.' max='30'}}
+        | {{input type='text' class='form-control' value=model.metaTweet placeholder='Custom tweet message. Should be less than 90 characters. Include the result in the tweet with {{score}}.' max='30'}}
     .form-group
       .label.col-sm-2.control-label Meta description
       .col-sm-10
@@ -47,6 +47,10 @@
         | {{view App.UploadView recordBinding='model' optImagePath='metaImage'}}
     
 hr
+
+<button type="button" class="btn btn-default" data-container="body" data-toggle="popover" data-placement="top" data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus.">
+Popover on top
+</button>
 
 .row
   .col-sm-12.clearfix
