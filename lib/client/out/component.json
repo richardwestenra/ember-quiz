@@ -4,11 +4,14 @@
     "component/classes": "1.2.1"
   },
   "scripts": [
-    "index.js"
+    "index.js",
+    "vendor/fast-fonts.js",
+    "vendor/addthis.js",
+    "vendor/responsive-iframe.js"
   ],
   "styles": [
   ],
   "images": [
-    "rasmussen-logo.png"
+    "images/rasmussen-logo.png"
   ]
 }
