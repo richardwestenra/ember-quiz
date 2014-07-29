@@ -54,6 +54,23 @@ block head
       itemprop="description"
       content='#{quiz.metaDesc}'
     )
+  else
+    meta(
+      name='description'
+      content='#{quiz.excerpt}'
+    )
+    meta(
+      name="twitter:description"
+      content='#{quiz.excerpt}'
+    )
+    meta(
+      property="og:description"
+      content='#{quiz.excerpt}'
+    )
+    meta(
+      itemprop="description"
+      content='#{quiz.excerpt}'
+    )
 
   if quiz.metaImage
     meta(
@@ -209,7 +226,8 @@ block body
       passthrough : {
         twitter: {
           via: "Rasmussen",
-          url: "#{quiz.url}"
+          url: "#{quiz.url}",
+          text: "#{quiz.metaTitle}"
         }
       }
     };
