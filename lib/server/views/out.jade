@@ -203,19 +203,18 @@ block body
   script.
     require('out');
 
-  if prod
-    script(
-      src="//s7.addthis.com/js/300/addthis_widget.js"
-    )
-
   script.
     window.addthis_share = window.addthis_share || {};
     addthis_share = {
       passthrough : {
         twitter: {
           via: "Rasmussen",
-          text: "#{quiz.metaTitle}",
           url: "#{quiz.url}"
         }
       }
     };
+
+  if prod
+    script(
+      src="//s7.addthis.com/js/300/addthis_widget.js"
+    )
