@@ -13,6 +13,8 @@
   ],
   "files": [
     "vendor/iframeresizer.contentwindow.min.js",
-    "vendor/iframeresize.js"
+    "vendor/iframeresizer.js",
+    "vendor/iframeresizer.contentwindow.map",
+    "vendor/iframeresizer.map"
   ]
 }
