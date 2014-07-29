@@ -208,17 +208,12 @@ block body
     type='text/javascript'
     src='/out.js'
   )
+  script(
+    type='text/javascript'
+    src='/out/vendor/iframeresizer.contentwindow.min.js'
+  )
 
   if prod
-
-    script(
-      type='text/javascript'
-      src='https://cdn.rawgit.com/npr/responsiveiframe/master/dist/jquery.responsiveiframe.min.js'
-    )
-    script.
-      var ri = responsiveIframe();
-      ri.allowResponsiveEmbedding();
-
     script(
       src="//s7.addthis.com/js/300/addthis_widget.js"
     )
