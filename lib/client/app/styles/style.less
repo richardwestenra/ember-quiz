@@ -65,9 +65,13 @@ div.drop {
   border: 2px solid #ddd;
   margin-bottom: 10px;
   border-radius: @border-radius;
+  transition: max-width ease .5s;
+  &:hover {
+    max-width: 100%;
+  }
 }
 
-form {
+.ember-application {
   .question, .result {
     background: #fafafa;
     border: 1px solid #eee;
