@@ -7,11 +7,6 @@ block head
     rel='stylesheet'
     media='screen'
   )
-  if prod
-    script(
-      type='text/javascript'
-      src='http://fast.fonts.net/jsapi/7701dc6b-2a73-4858-972c-07b9d695c0a8.js'
-    )
   
   if quiz.metaTitle
     title #{quiz.metaTitle}
@@ -194,7 +189,7 @@ block body
           ) 
             img(
               alt='Rasmussen College'
-              src='/out/rasmussen-logo.png'
+              src='/out/images/rasmussen-logo.png'
               width='210'
               height='45'
             )
@@ -206,17 +201,3 @@ block body
     type='text/javascript'
     src='/out.js'
   )
-
-  if prod
-
-    script(
-      type='text/javascript'
-      src='https://cdn.rawgit.com/npr/responsiveiframe/master/dist/jquery.responsiveiframe.min.js'
-    )
-    script.
-      var ri = responsiveIframe();
-      ri.allowResponsiveEmbedding();
-
-    script(
-      src="//s7.addthis.com/js/300/addthis_widget.js"
-    )
