@@ -32,11 +32,15 @@
     .form-group
       .label.col-sm-2.control-label Meta title
       .col-sm-10
-        | {{input type='text' class='form-control' value=model.metaTitle placeholder='The title for the page in search engines, social media, etc. Should be less than 90 characters.'}} 
+        | {{input type='text' class='form-control' value=model.metaTitle placeholder='The title for the page in search engines, social media, etc. Should be less than 90 characters.' max='90'}}
+    .form-group
+      .label.col-sm-2.control-label Meta tweet
+      .col-sm-10
+        | {{input type='text' class='form-control' value=model.metaTweet placeholder='A tweet message. Should be less than 30 characters.' max='30'}}
     .form-group
       .label.col-sm-2.control-label Meta description
       .col-sm-10
-        | {{textarea class='form-control' value=model.metaDesc placeholder='The description for the page in search engines, social media, etc. Should be less than 200 characters.' rows='3'}}
+        | {{textarea class='form-control' value=model.metaDesc placeholder='The description for the page in search engines, social media, etc. Should be less than 200 characters.' rows='3' max='200'}}
     .form-group
       .label.col-sm-2.control-label Social image (for Facebook etc)
       .col-sm-10
