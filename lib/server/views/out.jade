@@ -17,88 +17,91 @@ block body
   body.out
     .container
 
-      form.quiz(
-        action='.'
-        method='GET'
+      form(
+        action=''
       )
-        
-        .row-fluid
-          h1.title #{quiz.title}
 
-          if quiz.fullName
-            p.quiz-author
-              em By #{quiz.fullName}
+        .quiz
+          
+          .row-fluid
+            h1.title #{quiz.title}
 
-          if quiz.image
-            img.quiz-image(src='#{quiz.image}')
-          //- img.quiz-image.testImage(src='https://s3-us-west-2.amazonaws.com/quiz-maker-2/2014-07-06t14-17-06-614z')
-          //- nbed
+            if quiz.fullName
+              p.quiz-author
+                em By #{quiz.fullName}
 
-          if quiz.excerpt
-            p.quiz-desc #{quiz.excerpt}
+            if quiz.image
+              img.quiz-image(src='#{quiz.image}')
+            //- img.quiz-image.testImage(src='https://s3-us-west-2.amazonaws.com/quiz-maker-2/2014-07-06t14-17-06-614z')
+            //- nbed
+
+            if quiz.excerpt
+              p.quiz-desc #{quiz.excerpt}
 
 
-      each question in quiz.questions
+        each question in quiz.questions
 
-        .question.form-group(
-          id='#{question._id}'
-        )
-          .inner(
-            id='#{question._id}-inner'
+          .question.form-group(
+            id='#{question._id}'
           )
-            .row-fluid
-              h3 #{question.title}
+            .inner(
+              id='#{question._id}-inner'
+            )
+              .row-fluid
+                h3 #{question.title}
 
-              if question.image
-                img.question-image(src='#{question.image}')
-              //- img.question-image.testImage(src='https://s3-us-west-2.amazonaws.com/quiz-maker-2/2014-07-06t14-17-06-614z')
-              //- nbed
-              
-            .row-fluid.clearfix
-              each answer in question.answers
+                if question.image
+                  img.question-image(src='#{question.image}')
+                //- img.question-image.testImage(src='https://s3-us-west-2.amazonaws.com/quiz-maker-2/2014-07-06t14-17-06-614z')
+                //- nbed
+                
+              .row-fluid.clearfix
+                each answer in question.answers
 
 
-                .form-group.clearfix(
-                  class= quiz.type==1 ? 'checkbox' : 'radio'
-                )(
-                  class= answer.image ? 'hasImage' : 'noImage'
-                )
-                  label
-                    if answer.image
-                      img(src='#{answer.image}')
-                    //- img.quiz-image.testImage(src='https://s3-us-west-2.amazonaws.com/quiz-maker-2/2014-07-06t16-26-19-559z')
-                    //- nbed
-                    if quiz.type == 1
-                      input(
-                        type='checkbox'
-                        name='answer-#{question._id}'
-                        data-question='#{question._id}'
-                        data-answer='#{answer._id}'
-                      )
-                    else
-                      input(
-                        type='radio'
-                        name='answer-#{question._id}'
-                        data-question='#{question._id}'
-                        data-answer='#{answer._id}'
-                      )
-                    | #{answer.title}
+                  .form-group.clearfix(
+                    class= quiz.type==1 ? 'checkbox' : 'radio'
+                  )(
+                    class= answer.image ? 'hasImage' : 'noImage'
+                  )
+                    label
+                      if answer.image
+                        img(src='#{answer.image}')
+                      //- img.quiz-image.testImage(src='https://s3-us-west-2.amazonaws.com/quiz-maker-2/2014-07-06t16-26-19-559z')
+                      //- nbed
+                      if quiz.type == 1
+                        input(
+                          type='checkbox'
+                          name='answer-#{question._id}'
+                          data-question='#{question._id}'
+                          data-answer='#{answer._id}'
+                        )
+                      else
+                        input(
+                          type='radio'
+                          name='answer-#{question._id}'
+                          data-question='#{question._id}'
+                          data-answer='#{answer._id}'
+                          value='#{answer._id}'
+                          required='required'
+                        )
+                      | #{answer.title}
 
-      #finalResult
-        .row-fluid
-          button#submitBtn.btn.btn-default(type='submit')
-            | Show me my results!
+        #finalResult
+          .row-fluid
+            button#submitBtn.btn.btn-default(type='submit')
+              | Show me my results!
 
-      .footer
-        a.logo.pull-right(
-          href='http://www.rasmussen.edu/'
-          target='_blank'
-        ) 
-          img(
-            alt='Rasmussen College'
-            src='/out/logo-internal-date.png'
-            width='210'
-            height='45'
+        .footer
+          a.logo.pull-right(
+            href='http://www.rasmussen.edu/'
+            target='_blank'
+          ) 
+            img(
+              alt='Rasmussen College'
+              src='/out/logo-internal-date.png'
+              width='210'
+              height='45'
           )
 
   script.
