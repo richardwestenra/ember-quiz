@@ -126,6 +126,17 @@ div.drop {
       }
     }
   }
+  .selected-answer label {}
+  .selected-answer-correct label {
+      background-color: fade(@c_primary_light,20%);
+      border-color: @c_primary_light;
+      color: @c_primary;
+  }
+  .selected-answer-wrong label {
+      background-color: fade(@c_link_light,30%);
+      border-color: @c_link_light;
+      color: @c_link;
+  }
   .hasImage {
     width: 50%;
     float: left;
@@ -234,6 +245,6 @@ div.drop {
 }
 
 .selected-question-styled{
-  opacity: .3;
+  opacity: .8;
   pointer-events: none;
 }
