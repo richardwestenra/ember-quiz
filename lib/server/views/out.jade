@@ -17,7 +17,10 @@ block body
   body.out
     .container
 
-      .quiz
+      form.quiz(
+        action='.'
+        method='GET'
+      )
         
         .row-fluid
           h1.title #{quiz.title}
@@ -82,11 +85,10 @@ block body
                     | #{answer.title}
 
       #finalResult
-        if quiz.type == 1
-          .row-fluid
-            button#submitBtn.btn.btn-default
-              | Show me my results!
-          
+        .row-fluid
+          button#submitBtn.btn.btn-default(type='submit')
+            | Show me my results!
+
       .footer
         a.logo.pull-right(
           href='http://www.rasmussen.edu/'
