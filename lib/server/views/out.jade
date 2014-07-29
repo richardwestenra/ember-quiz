@@ -208,11 +208,12 @@ block body
     type='text/javascript'
     src='/out/vendor/iframeresizer.contentwindow.min.js'
   )
-
   script(
     type='text/javascript'
     src='/out.js'
   )
+  script.
+    require('out');
 
   if prod
     script(
