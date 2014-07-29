@@ -1,5 +1,5 @@
 {
-  "name": "base",
+  "name": "quiz-maker-123",
   "version": "1.0.0",
   "main": "lib/server/index.js",
   "dependencies": {
