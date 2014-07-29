@@ -4,6 +4,8 @@ table.table.quizzes
       td Name
       td
       td
+      td
+      td
   tbody
     | {{#each quiz in controller.controllers.quizzes}}
     tr
@@ -12,6 +14,12 @@ table.table.quizzes
         | {{quiz.title}} 
         span.glyphicon.glyphicon-pencil
         | {{/link-to}}
+      td
+        .btn-container
+          | {{#view App.CopyToClipboardView class='btn btn-default' quizBinding='quiz' tagName='button'}}
+          span.glyphicon.glyphicon-cog
+          |  Copy
+          | {{/view}}
       td
         <button class='btn btn-default' {{action 'showEmbed' quiz target='controller.controllers.quizzes'}}>
         span.glyphicon.glyphicon-cog
