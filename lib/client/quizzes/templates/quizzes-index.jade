@@ -14,25 +14,48 @@ table.table.quizzes
         | {{quiz.title}} 
         span.glyphicon.glyphicon-pencil
         | {{/link-to}}
+      //- td
+      //-   .btn-container
+      //-     | {{#view App.CopyToClipboardView class='btn btn-sm btn-default' quizBinding='quiz' tagName='button'}}
+      //-     span.glyphicon.glyphicon-cog
+      //-     |  Copy
+      //-     | {{/view}}
       td
-        .btn-container
-          | {{#view App.CopyToClipboardView class='btn btn-default' quizBinding='quiz' tagName='button'}}
-          span.glyphicon.glyphicon-cog
-          |  Copy
-          | {{/view}}
-      td
-        <button class='btn btn-default' {{action 'showEmbed' quiz target='controller.controllers.quizzes'}}>
+        <button class='btn btn-sm btn-default' {{action 'showEmbed' quiz target='controller.controllers.quizzes'}} data-toggle="modal" data-target="#embed">
         span.glyphicon.glyphicon-cog
         |  Embed
         </button>
       td
-        | {{#view App.PreviewLinkView quizBinding='quiz' class='btn btn-info'}}
+        | {{#view App.PreviewLinkView quizBinding='quiz' class='btn btn-sm btn-info'}}
         span.glyphicon.glyphicon-globe
         |  View
         | {{/view}}
       td
-        <button class='btn btn-danger' {{action 'removeQuiz' quiz target='controller.controllers.quizzes'}}>
+        <button class='btn btn-sm btn-danger' {{action 'removeQuiz' quiz target='controller.controllers.quizzes'}}>
         span.glyphicon.glyphicon-trash
         |  Remove
         </button>
     | {{/each}}
+
+#embed.modal.fade
+  .modal-dialog
+    .modal-content
+      .modal-header
+        <button type="button" class="close" data-dismiss="modal">
+        span(
+          aria-hidden="true"
+        )
+          | &times;
+        span.sr-only Close
+        </button>
+        h4.modal-title Copy the following code and paste it into an HTML page to embed quiz in an iframe:
+      .modal-body.clearfix
+        textarea.embedCode.form-control(
+          onClick="this.select();"
+          rows="5"
+        )
+        //- .btn-container
+        //-   | {{#view App.CopyToClipboardView class='btn btn-sm btn-primary pull-right' quizBinding='quiz' tagName='button'}}
+        //-   span.glyphicon.glyphicon-paperclip
+        //-   |  Copy to clipboard
+        //-   | {{/view}}
