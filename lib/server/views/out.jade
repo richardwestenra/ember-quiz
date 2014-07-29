@@ -89,18 +89,6 @@ block head
       src='http://fast.fonts.net/jsapi/7701dc6b-2a73-4858-972c-07b9d695c0a8.js'
     )
 
-  script
-    var addthis_share = addthis_share || {};
-    addthis_share = {
-      passthrough : {
-        twitter: {
-          via: "Rasmussen",
-          text: "#{quiz.metaTitle}",
-          url: "#{quiz.url}"
-        }
-      }
-    };
-
 block body
   body.out
     .container
@@ -219,3 +207,15 @@ block body
     script(
       src="//s7.addthis.com/js/300/addthis_widget.js"
     )
+
+  script.
+    window.addthis_share = window.addthis_share || {};
+    addthis_share = {
+      passthrough : {
+        twitter: {
+          via: "Rasmussen",
+          text: "#{quiz.metaTitle}",
+          url: "#{quiz.url}"
+        }
+      }
+    };
