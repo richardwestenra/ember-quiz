@@ -1,7 +1,6 @@
 {
   "name": "quiz",
   "dependencies": {
-    "component/clipboard-dom": "*"
   },
   "scripts": [
     "index.js",

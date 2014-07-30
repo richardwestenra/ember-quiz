@@ -5,7 +5,6 @@ table.table.quizzes
       td
       td
       td
-      td
   tbody
     | {{#each quiz in controller.controllers.quizzes}}
     tr
@@ -14,12 +13,6 @@ table.table.quizzes
         | {{quiz.title}} 
         span.glyphicon.glyphicon-pencil
         | {{/link-to}}
-      //- td
-      //-   .btn-container
-      //-     | {{#view App.CopyToClipboardView class='btn btn-sm btn-default' quizBinding='quiz' tagName='button'}}
-      //-     span.glyphicon.glyphicon-cog
-      //-     |  Copy
-      //-     | {{/view}}
       td
         <button class='btn btn-sm btn-default' {{action 'showEmbed' quiz target='controller.controllers.quizzes'}} data-toggle="modal" data-target="#embed">
         span.glyphicon.glyphicon-cog
@@ -54,8 +47,8 @@ table.table.quizzes
           onClick="this.select();"
           rows="5"
         )
-        //- .btn-container
-        //-   | {{#view App.CopyToClipboardView class='btn btn-sm btn-primary pull-right' quizBinding='quiz' tagName='button'}}
-        //-   span.glyphicon.glyphicon-paperclip
-        //-   |  Copy to clipboard
-        //-   | {{/view}}
+        .btn-container
+          | {{#view App.CopyToClipboardView class='btn btn-sm btn-primary pull-right' quizBinding='controller.controllers.quizzes.selected' tagName='button'}}
+          span.glyphicon.glyphicon-paperclip
+          |  {{view.label}}
+          | {{/view}}
