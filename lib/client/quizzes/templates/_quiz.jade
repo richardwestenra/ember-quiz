@@ -2,7 +2,16 @@
   .col-sm-offset-2.col-sm-10
     | {{model.error}}
 .form-group
-  .label.col-sm-2.control-label Title
+  .label.col-sm-2.control-label
+    | Title 
+    a.popover-dismiss(
+      href='javascript:'
+      data-toggle='popover'
+      title='Quiz title'
+      data-content='Quiz title to be displayed.'
+    )
+        | ?
+
   .col-sm-10
     | {{input type='text' class='form-control' value=model.title required='required' placeholder='Title of the quiz'}}
 .form-group
