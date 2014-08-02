@@ -10,7 +10,7 @@
       title='Quiz title'
       data-content='Quiz title to be displayed.'
     )
-        | ?
+      | ?
 
   .col-sm-10
     | {{input type='text' class='form-control' value=model.title required='required' placeholder='Title of the quiz'}}
@@ -21,7 +21,7 @@
 .form-group
   .label.col-sm-2.control-label Excerpt
   .col-sm-10
-    | {{textarea class='form-control' value=model.excerpt placeholder='Short description of the quiz' rows='3' record=model}}
+    | {{textarea class='form-control' value=model.excerpt placeholder='Short description of the quiz' rows='3' showLimit=model.showLimit}}
     | {{char-count value=model.excerpt max=200 show=model.showLimit}}
 .form-group
   .label.col-sm-2.control-label Author
