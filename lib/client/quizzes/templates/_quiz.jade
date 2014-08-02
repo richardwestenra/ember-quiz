@@ -21,7 +21,8 @@
 .form-group
   .label.col-sm-2.control-label Excerpt
   .col-sm-10
-    | {{textarea class='form-control' value=model.excerpt placeholder='Short description of the quiz' rows='3'}}
+    | {{textarea class='form-control' value=model.excerpt placeholder='Short description of the quiz' rows='3' record=model}}
+    | {{char-count value=model.excerpt max=200 show=model.showLimit}}
 .form-group
   .label.col-sm-2.control-label Author
   .col-sm-10

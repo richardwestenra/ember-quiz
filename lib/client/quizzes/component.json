@@ -15,7 +15,8 @@
   "jade": [
     "templates/quizzes",
     "templates/quizzes-index",
-    "templates/quizzes-new"
+    "templates/quizzes-new",
+    "templates/char-count"
   ],
   "styles": [
   ]
