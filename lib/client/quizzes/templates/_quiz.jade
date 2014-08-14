@@ -21,8 +21,7 @@
 .form-group
   .label.col-sm-2.control-label Excerpt
   .col-sm-10
-    | {{textarea class='form-control' value=model.excerpt placeholder='Short description of the quiz' rows='3' showLimit=model.showLimit}}
-    | {{char-count value=model.excerpt max=200 show=model.showLimit}}
+    | {{textarea class='form-control' value=model.excerpt placeholder='Short description of the quiz' rows='3'}}
 .form-group
   .label.col-sm-2.control-label Author
   .col-sm-10
@@ -42,15 +41,18 @@
     .form-group
       .label.col-sm-2.control-label Meta title
       .col-sm-10
-        | {{input type='text' class='form-control' value=model.metaTitle placeholder='The title for the page in search engines, social media, etc. Should be less than 90 characters.' max='90'}}
+        | {{input type='text' class='form-control' value=model.metaTitle placeholder='The title for the page in search engines, social media, etc. Should be less than 70 characters.' showLimit=model.showLimit}}
+        | {{char-count value=model.metaTitle max=70 show=model.showLimit}}
     .form-group
       .label.col-sm-2.control-label Tweet 
       .col-sm-10
-        | {{input type='text' class='form-control' value=model.metaTweet placeholder='Custom tweet message. Should be less than 90 characters. Include the result in the tweet with {{score}}.' max='30'}}
+        | {{input type='text' class='form-control' value=model.metaTweet placeholder='Custom tweet message. Should be less than 90 characters. Include the result in the tweet with {{score}}.' showLimit=model.showLimit}}
+        | {{char-count value=model.metaTweet max=90 show=model.showLimit}}
     .form-group
       .label.col-sm-2.control-label Meta description
       .col-sm-10
-        | {{textarea class='form-control' value=model.metaDesc placeholder='The description for the page in search engines, social media, etc. Should be less than 200 characters.' rows='3' max='200'}}
+        | {{textarea class='form-control' value=model.metaDesc placeholder='The description for the page in search engines, social media, etc. Should be less than 200 characters.' rows='3' showLimit=model.showLimit}}
+        | {{char-count value=model.metaDesc max=200 show=model.showLimit}}
     .form-group
       .label.col-sm-2.control-label Social image (for Facebook etc)
       .col-sm-10

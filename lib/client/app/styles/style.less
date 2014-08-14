@@ -264,8 +264,14 @@ textarea.embedCode {
 }
 
 .char-count{
-
+  text-align: right;
   opacity: 0;
+  font-size: 12px;
+  padding-top: 4px;
+  transition: opacity ease .4s;
+  strong {
+    font-size: 14px;
+  }
 
   &.show{
     opacity: 1;
