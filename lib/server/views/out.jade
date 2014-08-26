@@ -191,6 +191,10 @@ block body
             a.addthis_button_twitter
             a.addthis_button_google_plusone_share
             a.addthis_button_linkedin
+            a.addthis_button_embed.embedLink(
+              href='#'
+              title='Embed this quiz'
+            ) Embed
             a.addthis_button_compact
             a.addthis_counter.addthis_bubble_style
     
@@ -205,6 +209,11 @@ block body
               width='210'
               height='45'
             )
+
+    #embed
+      h5 Love it? Embed it on your website or blog:
+      a.embedLink.closeEmbed(href="#") &times;
+      textarea#embedEl(onClick="this.select();")
 
   script.
     window.QUIZ =  JSON.parse(!{JSON.stringify(quiz_str)});
