@@ -9,7 +9,8 @@
   "styles": [
   ],
   "images": [
-    "images/rasmussen-logo.png"
+    "images/rasmussen-logo.png",
+    "images/embed.png"
   ],
   "files": [
     "vendor/iframeresizer.contentwindow.min.js",
