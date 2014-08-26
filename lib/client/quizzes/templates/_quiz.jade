@@ -3,14 +3,7 @@
     | {{model.error}}
 .form-group
   .label.col-sm-2.control-label
-    | Title 
-    a.popover-dismiss(
-      href='javascript:'
-      data-toggle='popover'
-      title='Quiz title'
-      data-content='Quiz title to be displayed.'
-    )
-      | ?
+    | Title
 
   .col-sm-10
     | {{input type='text' class='form-control' value=model.title required='required' placeholder='Title of the quiz'}}
@@ -35,26 +28,51 @@
   .col-sm-12
     h4 Social &amp; Meta tags:
     .form-group
-      .label.col-sm-2.control-label URL
+      .label.col-sm-2.control-label URL 
+        a.info.popover-dismiss(
+          href='javascript:'
+          data-toggle='popover'
+          data-content='This URL will passed to social media sites like Facebook and Twitter. It should be the URL of the page that the quiz will be embedded in, e.g. http://www.rasmussen.edu/quiz-name-goes-here/.'
+        ) ?
       .col-sm-10
         | {{input type='text' class='form-control' value=model.url placeholder='The URL for the page that the quiz will live on.'}} 
     .form-group
-      .label.col-sm-2.control-label Meta title
+      .label.col-sm-2.control-label Meta title 
+        a.info.popover-dismiss(
+          href='javascript:'
+          data-toggle='popover'
+          data-content='The page title that will be shown when the page is linked to from social media sites like Facebook and Twitter, and in search results. It should be brief and enticing, to encourage users to learn more.'
+        ) ?
       .col-sm-10
         | {{input type='text' class='form-control' value=model.metaTitle placeholder='The title for the page in search engines, social media, etc. Should be less than 70 characters.' showLimit=model.titleShowLimit}}
         | {{char-count value=model.metaTitle max=70 show=model.titleShowLimit}}
     .form-group
       .label.col-sm-2.control-label Tweet 
+        a.info.popover-dismiss(
+          href='javascript:'
+          data-toggle='popover'
+          data-content='Default text to populate tweets. If you include the exact text {score} in your message then it will be automatically replaced by the user\'s result title when they complete the quiz, but be careful not to exceed the 140 character tweet limit.'
+        ) ?
       .col-sm-10
-        | {{input type='text' class='form-control' value=model.metaTweet placeholder='Custom tweet message. Should be less than 90 characters. Include the result in the tweet with {{score}}.' showLimit=model.tweetShowLimit}}
+        | {{input type='text' class='form-control' value=model.metaTweet placeholder='Custom tweet message. Should be less than 90 characters. Include the result in the tweet with {score}.' showLimit=model.tweetShowLimit}}
         | {{char-count value=model.metaTweet max=90 show=model.tweetShowLimit}}
     .form-group
-      .label.col-sm-2.control-label Meta description
+      .label.col-sm-2.control-label Meta desc. 
+        a.info.popover-dismiss(
+          href='javascript:'
+          data-toggle='popover'
+          data-content='The page description that will be shown when the page is linked to from social media sites like Facebook and Twitter, and in search results. It will be shown alongside the title, so it should complement the title without duplicating any of the same information.'
+        ) ?
       .col-sm-10
         | {{textarea class='form-control' value=model.metaDesc placeholder='The description for the page in search engines, social media, etc. Should be less than 200 characters.' rows='3' showLimit=model.descriptionShowLimit}}
         | {{char-count value=model.metaDesc max=200 show=model.descriptionShowLimit}}
     .form-group
-      .label.col-sm-2.control-label Social image (for Facebook etc)
+      .label.col-sm-2.control-label Social image 
+        a.info.popover-dismiss(
+          href='javascript:'
+          data-toggle='popover'
+          data-content='This image will be shown in Facebook news feeds, Twitter cards, etc. It should ideally be a minimum of 1200px by 630px. It will be cropped to various aspect ratios (e.g. landscape and square) and sizes (e.g. widths between 180px and 600px), so it should be an image that will cope well with this.'
+        ) ?
       .col-sm-10
         | {{view App.UploadView recordBinding='model' optImagePath='metaImage'}}
     
