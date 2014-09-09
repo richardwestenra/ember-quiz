@@ -8,7 +8,12 @@
   .col-sm-10
     | {{input type='text' class='form-control' value=model.title required='required' placeholder='Title of the quiz'}}
 .form-group
-  .label.col-sm-2.control-label Image
+  .label.col-sm-2.control-label Image 
+        a.info.popover-dismiss(
+          href='javascript:'
+          data-toggle='popover'
+          data-content='This is the main feature image for the piece, and will be featured prominently below the title and above the description. Ideally, it should be a landscape image with a width of at least 700px.'
+        ) ?
   .col-sm-10
     | {{view App.UploadView recordBinding='model'}}
 .form-group
@@ -20,7 +25,12 @@
   .col-sm-10
     | {{input type='text' class='form-control' value=model.fullName placeholder='Your name, e.g. Alan Smithee'}}
 .form-group
-  .label.col-sm-2.control-label Quiz type
+  .label.col-sm-2.control-label Quiz type 
+        a.info.popover-dismiss(
+          href='javascript:'
+          data-toggle='popover'
+          data-content='Select between the three quiz types: Multiple choice quizzes offer various results dependent on the users’ selected answers; True/false quizzes look similar but they have right/wrong answers and supply a score at the end; Checklist quizzes supply a list of checkboxes and gives the user a result based on how many they ticked.'
+        ) ?
   .col-sm-10
     | {{view Em.Select  class='form-control' valueBinding='model.quizType' contentBinding='controller.controllers.quizzes.quizTypes' optionLabelPath='content.label' optionValuePath='content.value'}}
 
@@ -71,7 +81,7 @@
         a.info.popover-dismiss(
           href='javascript:'
           data-toggle='popover'
-          data-content='This image will be shown in Facebook news feeds, Twitter cards, etc. It should ideally be a minimum of 1200px by 630px. It will be cropped to various aspect ratios (e.g. landscape and square) and sizes (e.g. widths between 180px and 600px), so it should be an image that will cope well with this.'
+          data-content='This image will be shown in Facebook news feeds, Twitter cards, etc. It should ideally be a minimum of 1200px by 630px, in order to look good on retina screens. It should be an image that will cope well with being cropped and resized, as it will be cropped to various aspect ratios (e.g. landscape and square) and sizes (e.g. widths between 180px and 600px).'
         ) ?
       .col-sm-10
         | {{view App.UploadView recordBinding='model' optImagePath='metaImage'}}
