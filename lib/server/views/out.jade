@@ -182,7 +182,9 @@ block body
                           required='required'
                         )
                       | #{answer.title}
-
+            .outlet(
+              id='#{question._id}-outlet'
+            )
         #finalResult
           .row-fluid
             button#submitBtn.btn.btn-default(type='submit')
