@@ -25,7 +25,8 @@ var config = {
     key: process.env.QUIZMAKER_AWS_ACCESS_KEY_ID,
     acl: 'public-read',
     staticUrl: 'https://s3-us-west-2.amazonaws.com/quiz-maker-2/'  
-  }
+  },
+  dev: process.env.NODE_ENV !== 'production'
 };
 
 // expose
