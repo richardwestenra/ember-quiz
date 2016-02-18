@@ -10,8 +10,8 @@ run-production:
 	@$(MAKE) components --no-print-directory -C lib/client/app -B
 	@$(MAKE) components --no-print-directory -C lib/client/out -B
 	@DEBUG=cms:* MINIFY=1 node bin/build 
-	@du -bh public/*.js
-	@du -bh public/*.css
+	# @du -bh public/*.js
+	# @du -bh public/*.css
 	@DEBUG=cms:* NODE_ENV=production node bin/run
 
 deploy:
