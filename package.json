@@ -23,6 +23,6 @@
     "mocha-phantomjs": "~3.3.2"
   },
   "engines": {
-    "node": "0.10"
+    "node": "1.4.29"
   }
 }
