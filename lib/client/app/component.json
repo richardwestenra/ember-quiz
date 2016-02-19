@@ -45,9 +45,6 @@
   "styles": [
     "vendor/nprogress.css"
   ],
-  "images": [
-    "images/favicon.ico"
-  ],
   "local": [
     "quizzes",
     "quiz",

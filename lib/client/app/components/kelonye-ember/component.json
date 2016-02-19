@@ -1,0 +1,14 @@
+{
+  "name": "ember",
+  "version": "1.2.0",
+  "dependencies": {
+    "kelonye/jquery": "1.9.1"
+  },
+  "main": "lib/index.js",
+  "scripts": [
+    "lib/index.js",
+    "lib/ember.js",
+    "lib/handlebars.js"
+  ],
+  "repo": "https://raw.githubusercontent.com/kelonye/ember"
+}

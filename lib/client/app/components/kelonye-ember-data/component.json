@@ -1,0 +1,13 @@
+{
+  "name": "ember-data",
+  "version": "1.0.0-beta.4",
+  "dependencies": {
+    "kelonye/ember": "1.2.0"
+  },
+  "main": "lib/index.js",
+  "scripts": [
+    "lib/index.js",
+    "lib/ember-data.js"
+  ],
+  "repo": "https://raw.githubusercontent.com/kelonye/ember-data"
+}

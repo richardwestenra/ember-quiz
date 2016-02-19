@@ -2,15 +2,22 @@
 /**
   * Module dependencies.
   */
-var debugs = require('../lib/server/debugs');
-var builder = require('../lib/server/builder');
+var debug = require('debug')('app:builder');
+var builder = require('../lib/server/builder/build');
+var Batch = require('batch');
+var components = [
+  'app',
+  'out',
+];
 
 // exec
 
-builder(done);
+var batch = new Batch;
+components.forEach(function(component){
+  batch.push(builder.bind(null, component, '1' === process.env.MINIFY));
+});
 
-// done
-
-function done(err){
-  if (err) throw err;
-}
+batch.end(function(err){
+  if (err) debug(err.message);
+  process.exit();
+});

@@ -1,0 +1,14 @@
+{
+  "name": "ember-autofill-fix",
+  "version": "0.0.4",
+  "license": "MIT",
+  "description": "Fix input binding bug caused by browser autofill fix values not being bound",
+  "dependencies": {
+    "kelonye/ember": "1.2.0"
+  },
+  "main": "lib/index.js",
+  "scripts": [
+    "lib/index.js"
+  ],
+  "repo": "https://raw.githubusercontent.com/kelonye/ember-autofill-fix"
+}

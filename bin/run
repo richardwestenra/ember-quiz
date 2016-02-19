@@ -3,8 +3,8 @@
 /**
   * Module dependencies.
   */
-var debugs = require('../lib/server/debugs');
-var config = require('../config');
+var debug = require('debug')('app:web');
+var _ = require('../lib/server/config');
 
 // app
 
@@ -12,7 +12,6 @@ var app = require('../lib/server');
 
 // bind
 
-var port = process.env.PORT || config.port;
-app.listen(port);
+app.listen(config.port);
 
-debugs.main('started app on port %d', port);
+debug('started app on port %d', config.port);
